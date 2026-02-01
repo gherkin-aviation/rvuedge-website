@@ -293,14 +293,22 @@ footer a:hover {
 }
 
 .video-feature .phone-mockup {
-  width: 140px;
+  width: 140px !important;
+  max-width: 140px !important;
 }
 
 .video-feature .phone-mockup-screen {
-  width: 128px;
+  width: 128px !important;
+  max-width: 128px !important;
   height: 277px;
   padding-top: 20px;
   background: #000;
+}
+
+.video-feature .phone-mockup-screen video {
+  width: 128px !important;
+  max-width: 128px !important;
+  height: 257px;
 }
 
 /* Mobile responsive */
