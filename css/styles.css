@@ -195,37 +195,34 @@ footer a:hover {
   border: 0;
 }
 
-/* Phone Mockup Frame */
+/* Phone Mockup Frame - Small for gallery */
 .phone-mockup {
   position: relative;
   display: inline-block;
   background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-  border-radius: 40px;
-  padding: 12px;
-  box-shadow:
-    0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .phone-mockup::before {
-  /* Dynamic Island / Notch */
+  /* Dynamic Island */
   content: '';
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 28px;
+  width: 40px;
+  height: 12px;
   background: #000;
-  border-radius: 20px;
+  border-radius: 10px;
   z-index: 10;
 }
 
 .phone-mockup-screen {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 18px;
   background: #000;
 }
 
@@ -233,151 +230,109 @@ footer a:hover {
 .phone-mockup-screen video {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 28px;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 18px;
 }
 
-/* Side buttons */
-.phone-mockup::after {
-  content: '';
-  position: absolute;
-  right: -3px;
-  top: 120px;
-  width: 3px;
-  height: 60px;
-  background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
-  border-radius: 0 2px 2px 0;
-}
-
-/* Screenshot Gallery */
+/* Screenshot Gallery - Horizontal scroll */
 .screenshot-gallery {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: nowrap !important;
+  gap: 1rem;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 2rem 1rem;
+  padding: 1rem 2rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-blue) #f1f1f1;
 }
 
 .screenshot-gallery::-webkit-scrollbar {
-  height: 8px;
+  height: 6px;
 }
 
 .screenshot-gallery::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+  background: #e5e7eb;
+  border-radius: 3px;
 }
 
 .screenshot-gallery::-webkit-scrollbar-thumb {
   background: var(--primary-blue);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .screenshot-item {
   flex: 0 0 auto;
   scroll-snap-align: center;
   text-align: center;
-  width: 240px;
 }
 
 .screenshot-item .phone-mockup {
-  width: 240px;
-  margin: 0 auto;
+  width: 140px;
 }
 
 .screenshot-item .phone-mockup-screen {
-  width: 216px;
-  height: 468px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.screenshot-item .phone-mockup-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  width: 128px;
+  height: 277px;
 }
 
 .screenshot-caption {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-weight: 600;
   color: var(--text-dark);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
-/* Video mockup specific */
-.video-mockup .phone-mockup {
-  width: 280px;
+/* Video section - separate featured display */
+.video-feature {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.video-mockup .phone-mockup-screen {
-  width: 256px;
-  height: 554px;
-  overflow: hidden;
+.video-feature .phone-mockup {
+  width: 180px;
+  border-radius: 28px;
+  padding: 8px;
 }
 
-.video-mockup video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.video-feature .phone-mockup::before {
+  width: 50px;
+  height: 14px;
+  top: 12px;
 }
 
-/* Responsive phone sizes */
+.video-feature .phone-mockup-screen {
+  width: 164px;
+  height: 355px;
+  border-radius: 20px;
+}
+
+.video-feature .phone-mockup-screen video {
+  border-radius: 20px;
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
-  .phone-mockup {
-    border-radius: 32px;
-    padding: 10px;
-  }
-
-  .phone-mockup::before {
-    width: 70px;
-    height: 22px;
-    top: 16px;
-  }
-
-  .phone-mockup-screen {
-    border-radius: 22px;
-  }
-
-  .phone-mockup-screen img,
-  .phone-mockup-screen video {
-    border-radius: 22px;
-  }
-
-  .screenshot-gallery {
-    gap: 1rem;
-    padding: 1.5rem 0.5rem;
-  }
-
-  .screenshot-item {
-    width: 200px;
-  }
-
   .screenshot-item .phone-mockup {
-    width: 200px;
+    width: 120px;
   }
 
   .screenshot-item .phone-mockup-screen {
-    width: 180px;
-    height: 390px;
-  }
-
-  .video-mockup .phone-mockup {
-    width: 200px;
-  }
-
-  .video-mockup .phone-mockup-screen {
-    width: 180px;
-    height: 390px;
+    width: 108px;
+    height: 234px;
   }
 
   .screenshot-caption {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .video-feature .phone-mockup {
+    width: 160px;
+  }
+
+  .video-feature .phone-mockup-screen {
+    width: 144px;
+    height: 312px;
   }
 }
