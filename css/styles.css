@@ -1,0 +1,196 @@
+/* RVU Edge Website - Custom Styles */
+
+/* Brand Colors */
+:root {
+  --primary-blue: #0277BD;
+  --primary-blue-dark: #01579B;
+  --accent-orange: #E65C00;
+  --accent-orange-dark: #BF4D00;
+  --text-dark: #1a1a1a;
+  --text-muted: #6b7280;
+  --bg-light: #f9fafb;
+  --bg-white: #ffffff;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+}
+
+/* Feature card hover effect */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--accent-orange);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-orange-dark);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background-color: var(--primary-blue);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-blue-dark);
+  transform: scale(1.02);
+}
+
+/* Store buttons */
+.store-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.store-button-apple {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.store-button-google {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e5e7eb;
+}
+
+/* Legal page styles */
+.legal-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.legal-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.legal-content th,
+.legal-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.legal-content th {
+  background-color: var(--bg-light);
+  font-weight: 600;
+}
+
+/* FAQ accordion */
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-question {
+  cursor: pointer;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  color: var(--primary-blue);
+}
+
+.faq-answer {
+  padding-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+footer a {
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--primary-blue);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .hero-gradient {
+    padding: 3rem 1rem;
+  }
+
+  .store-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Accessibility */
+:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
