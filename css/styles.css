@@ -293,27 +293,14 @@ footer a:hover {
 }
 
 .video-feature .phone-mockup {
-  width: 180px;
-  border-radius: 28px;
-  padding: 8px;
-}
-
-.video-feature .phone-mockup::before {
-  width: 50px;
-  height: 14px;
-  top: 12px;
+  width: 140px;
 }
 
 .video-feature .phone-mockup-screen {
-  width: 164px;
-  height: 355px;
-  border-radius: 20px;
-  padding-top: 22px;
+  width: 128px;
+  height: 277px;
+  padding-top: 20px;
   background: #000;
-}
-
-.video-feature .phone-mockup-screen video {
-  border-radius: 20px;
 }
 
 /* Mobile responsive */
@@ -333,11 +320,12 @@ footer a:hover {
   }
 
   .video-feature .phone-mockup {
-    width: 160px;
+    width: 120px;
   }
 
   .video-feature .phone-mockup-screen {
-    width: 144px;
-    height: 312px;
+    width: 108px;
+    height: 234px;
+    padding-top: 16px;
   }
 }
