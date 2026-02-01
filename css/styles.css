@@ -275,6 +275,8 @@ footer a:hover {
 .screenshot-item .phone-mockup-screen {
   width: 128px;
   height: 277px;
+  padding-top: 20px;
+  background: #000;
 }
 
 .screenshot-caption {
@@ -306,6 +308,8 @@ footer a:hover {
   width: 164px;
   height: 355px;
   border-radius: 20px;
+  padding-top: 22px;
+  background: #000;
 }
 
 .video-feature .phone-mockup-screen video {
@@ -321,6 +325,7 @@ footer a:hover {
   .screenshot-item .phone-mockup-screen {
     width: 108px;
     height: 234px;
+    padding-top: 16px;
   }
 
   .screenshot-caption {
