@@ -238,37 +238,33 @@
         Clean, intuitive design that gets out of your way. Log procedures in seconds, track your progress at a glance.
       </p>
 
-      <!-- Video Demo -->
-      <div class="flex justify-center mb-12">
-        <div class="text-center">
-          <div class="phone-mockup">
-            <div class="phone-mockup-screen">
-              <video autoplay loop muted playsinline style="width: 280px;">
-                <source src="images/quicklog_video.mov" type="video/quicktime">
-                <source src="images/quicklog_video.mov" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-          <p class="screenshot-caption mt-4">Log Procedures in Seconds</p>
-        </div>
-      </div>
-
-      <!-- Screenshot Gallery -->
-      <div class="screenshot-gallery justify-center flex-wrap">
+      <!-- Screenshot Gallery - Horizontal Scroll -->
+      <div class="screenshot-gallery">
         <div class="screenshot-item">
           <div class="phone-mockup">
             <div class="phone-mockup-screen">
-              <img src="images/dashboard.png" alt="RVU Edge Dashboard showing daily and monthly wRVU progress" loading="lazy">
+              <img src="images/dashboard.png" alt="RVU Edge Dashboard showing daily and monthly wRVU progress">
             </div>
           </div>
           <p class="screenshot-caption">Dashboard</p>
         </div>
 
+        <div class="screenshot-item video-mockup">
+          <div class="phone-mockup">
+            <div class="phone-mockup-screen">
+              <video autoplay loop muted playsinline>
+                <source src="images/quicklog_video.mov" type="video/quicktime">
+                <source src="images/quicklog_video.mov" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <p class="screenshot-caption">Quick Log Demo</p>
+        </div>
+
         <div class="screenshot-item">
           <div class="phone-mockup">
             <div class="phone-mockup-screen">
-              <img src="images/quicklog_image.PNG" alt="Quick Log screen for rapid CPT code entry" loading="lazy">
+              <img src="images/quicklog_image.PNG" alt="Quick Log screen for rapid CPT code entry">
             </div>
           </div>
           <p class="screenshot-caption">Quick Log</p>
@@ -277,7 +273,7 @@
         <div class="screenshot-item">
           <div class="phone-mockup">
             <div class="phone-mockup-screen">
-              <img src="images/history.png" alt="Procedure history with dates and wRVU values" loading="lazy">
+              <img src="images/history.png" alt="Procedure history with dates and wRVU values">
             </div>
           </div>
           <p class="screenshot-caption">History</p>
@@ -286,7 +282,7 @@
         <div class="screenshot-item">
           <div class="phone-mockup">
             <div class="phone-mockup-screen">
-              <img src="images/goals.png" alt="Monthly goal tracking with pace indicator" loading="lazy">
+              <img src="images/goals.png" alt="Monthly goal tracking with pace indicator">
             </div>
           </div>
           <p class="screenshot-caption">Goals</p>
@@ -295,12 +291,25 @@
         <div class="screenshot-item">
           <div class="phone-mockup">
             <div class="phone-mockup-screen">
-              <img src="images/benchmarks.png" alt="MGMA specialty benchmark comparison" loading="lazy">
+              <img src="images/benchmarks.png" alt="MGMA specialty benchmark comparison">
             </div>
           </div>
           <p class="screenshot-caption">Benchmarks</p>
         </div>
       </div>
+
+      <!-- Scroll hint -->
+      <p class="text-center text-gray-400 text-sm mt-2">
+        <span class="inline-flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+          Scroll to see more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </p>
     </div>
   </section>
 
