@@ -1,0 +1,11 @@
+# RVU Edge - The Fastest wRVU Tracker for Physicians
+# https://rvuedge.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rvuedge.com/sitemap.xml
+
+# Crawl-delay (be nice to our server)
+Crawl-delay: 1
