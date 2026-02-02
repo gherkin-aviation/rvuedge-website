@@ -270,13 +270,12 @@ footer a:hover {
 
 .screenshot-item .phone-mockup {
   width: 140px;
-  height: 310px;
 }
 
 .screenshot-item .phone-mockup-screen {
   width: 128px;
-  height: 298px;
-  padding-top: 20px;
+  height: 260px;
+  padding-top: 16px;
   background: #000;
 }
 
@@ -301,15 +300,15 @@ footer a:hover {
 .video-feature .phone-mockup-screen {
   width: 128px !important;
   max-width: 128px !important;
-  height: 298px;
-  padding-top: 20px;
+  height: 260px;
+  padding-top: 16px;
   background: #000;
 }
 
 .video-feature .phone-mockup-screen video {
   width: 128px !important;
   max-width: 128px !important;
-  height: 278px;
+  height: 244px;
 }
 
 /* Mobile responsive */
@@ -320,8 +319,8 @@ footer a:hover {
 
   .screenshot-item .phone-mockup-screen {
     width: 108px;
-    height: 251px;
-    padding-top: 16px;
+    height: 220px;
+    padding-top: 14px;
   }
 
   .screenshot-caption {
@@ -334,7 +333,7 @@ footer a:hover {
 
   .video-feature .phone-mockup-screen {
     width: 108px;
-    height: 251px;
-    padding-top: 16px;
+    height: 220px;
+    padding-top: 14px;
   }
 }
