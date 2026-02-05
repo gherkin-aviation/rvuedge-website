@@ -237,7 +237,7 @@ nav + section.hero-gradient {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   border-radius: 18px;
 }
 
@@ -280,7 +280,6 @@ nav + section.hero-gradient {
 .screenshot-item .phone-mockup-screen {
   width: 128px;
   height: 260px;
-  padding-top: 16px;
   background: #000;
 }
 
@@ -306,14 +305,13 @@ nav + section.hero-gradient {
   width: 128px !important;
   max-width: 128px !important;
   height: 260px;
-  padding-top: 16px;
   background: #000;
 }
 
 .video-feature .phone-mockup-screen video {
   width: 128px !important;
   max-width: 128px !important;
-  height: 244px;
+  height: 260px;
 }
 
 /* Mobile responsive */
@@ -325,7 +323,6 @@ nav + section.hero-gradient {
   .screenshot-item .phone-mockup-screen {
     width: 108px;
     height: 220px;
-    padding-top: 14px;
   }
 
   .screenshot-caption {
@@ -339,6 +336,5 @@ nav + section.hero-gradient {
   .video-feature .phone-mockup-screen {
     width: 108px;
     height: 220px;
-    padding-top: 14px;
   }
 }
