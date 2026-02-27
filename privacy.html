@@ -43,7 +43,7 @@
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="legal-content">
       <h1 class="text-3xl font-bold mb-2">Privacy Policy for RVU Edge</h1>
-      <p class="text-gray-500 mb-8"><strong>Last Updated:</strong> January 31, 2026 | <strong>Effective Date:</strong> January 31, 2026</p>
+      <p class="text-gray-500 mb-8"><strong>Last Updated:</strong> February 27, 2026 | <strong>Effective Date:</strong> January 31, 2026</p>
 
       <p class="mb-6">AeroEdge LLC ("we," "our," or "us") operates the RVU Edge mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
 
@@ -203,10 +203,53 @@
         </tbody>
       </table>
 
-      <h2>10. International Data Transfers</h2>
+      <h2>10. Chrome Extension ("RVU Edge - Board Portal Auto-Fill")</h2>
+      <p>The RVU Edge Chrome Extension is a companion tool that auto-fills medical board portal case log forms using data exported from the RVU Edge mobile app.</p>
+
+      <h3>10.1 Data the Extension Collects</h3>
+      <ul>
+        <li><strong>Case Data:</strong> Procedure logs (CPT codes, dates, roles, supervisor names) that you explicitly transfer from the mobile app via a one-time 6-digit code</li>
+        <li><strong>Field Mapping Data:</strong> Anonymous DOM selectors (HTML element IDs, names, and types) from board portal form pages, submitted to improve portal compatibility for all users</li>
+      </ul>
+
+      <h3>10.2 Data the Extension Does NOT Collect</h3>
+      <ul>
+        <li>Patient names, MRNs, or any patient identifiers</li>
+        <li>Portal login credentials or session tokens</li>
+        <li>Browsing history or activity on non-portal pages</li>
+        <li>Personal health information (PHI)</li>
+      </ul>
+
+      <h3>10.3 Data Storage</h3>
+      <ul>
+        <li>All case data is stored <strong>locally in your browser</strong> using Chrome's storage API (<code>chrome.storage.local</code>)</li>
+        <li>Case data is never uploaded to our servers</li>
+        <li>Transfer codes expire after 10 minutes and are single-use</li>
+        <li>Uninstalling the extension deletes all stored data</li>
+      </ul>
+
+      <h3>10.4 Network Requests</h3>
+      <p>The extension makes the following network requests:</p>
+      <ul>
+        <li><strong>connect.rvuedge.com:</strong> One-time case transfer from phone to browser (via Firebase Cloud Functions). Transfer payloads are deleted after retrieval.</li>
+        <li><strong>Community mapping submission:</strong> Anonymous form field structure data (HTML selectors only, no user or patient data) sent to Firebase to improve board portal compatibility.</li>
+      </ul>
+
+      <h3>10.5 Permissions</h3>
+      <ul>
+        <li><strong>storage:</strong> Persist case queue locally across browser sessions</li>
+        <li><strong>activeTab:</strong> Access the current tab to fill form fields when the user clicks "Fill Form"</li>
+        <li><strong>scripting:</strong> Inject form-filling scripts on portal pages</li>
+        <li><strong>Host permissions:</strong> Access specific board portal domains (acgme.org, absurgery.org, abos.org, abog.org, auanet.org, entnet.org) to auto-fill case entry forms</li>
+      </ul>
+
+      <h3>10.6 Form Submission</h3>
+      <p>The extension <strong>never automatically submits</strong> forms on board portals. It fills fields only — the user must manually review and submit each case on the portal.</p>
+
+      <h2>11. International Data Transfers</h2>
       <p>Your data is stored locally on your device and is not transferred internationally. Third-party services (Google Fonts, App Stores) may process data in accordance with their respective privacy policies.</p>
 
-      <h2>11. Changes to This Privacy Policy</h2>
+      <h2>12. Changes to This Privacy Policy</h2>
       <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
       <ul>
         <li>Posting the new Privacy Policy in the App</li>
@@ -215,7 +258,7 @@
       </ul>
       <p>Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
-      <h2>12. Contact Us</h2>
+      <h2>13. Contact Us</h2>
       <p>If you have questions about this Privacy Policy or wish to exercise your data rights, contact us:</p>
       <p><strong>AeroEdge LLC</strong></p>
       <ul>
