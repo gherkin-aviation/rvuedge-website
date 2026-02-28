@@ -6,6 +6,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://rvuedge.com/sitemap.xml
-
-# Crawl-delay (be nice to our server)
-Crawl-delay: 1

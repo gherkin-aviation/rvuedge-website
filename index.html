@@ -37,44 +37,134 @@
   <meta name="twitter:description" content="From medical student to attending. Track procedures, wRVUs, credentials, MGMA benchmarks, and board cases.">
   <meta name="twitter:image" content="https://rvuedge.com/images/app-icon.png">
 
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="google42cfc90fdae5bcc0">
+
   <!-- App Links -->
   <meta property="al:ios:app_name" content="RVU Edge">
+  <meta property="al:ios:app_store_id" content="6758588125">
   <meta property="al:android:app_name" content="RVU Edge">
   <meta name="apple-itunes-app" content="app-id=6758588125">
 
-  <!-- Structured Data -->
+  <!-- Structured Data: SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "RVU Edge",
-    "operatingSystem": "iOS, Android, macOS, Windows",
+    "operatingSystem": "iOS",
     "applicationCategory": "HealthApplication",
-    "description": "The complete medical career tracker. From medical student to attending — procedures, wRVUs, credentials, MGMA benchmarks, board cases, and CV builder.",
+    "description": "The complete medical career tracker. From medical student to attending — procedures, wRVUs, credentials, MGMA benchmarks, board cases, and CV builder. The fastest wRVU tracker for physicians.",
+    "url": "https://rvuedge.com",
+    "downloadUrl": "https://apps.apple.com/app/id6758588125",
+    "screenshot": "https://rvuedge.com/images/screenshots/iphone/dashboard.png",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "ratingCount": "4"
+      "ratingCount": "4",
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "offers": [
       {
         "@type": "Offer",
         "price": "0.99",
         "priceCurrency": "USD",
-        "description": "$0.99/month (first month free)"
+        "description": "Monthly subscription - first month free",
+        "category": "subscription"
       },
       {
         "@type": "Offer",
         "price": "19.99",
         "priceCurrency": "USD",
-        "description": "$19.99 lifetime access"
+        "description": "Lifetime access - one-time purchase",
+        "category": "purchase"
       }
     ],
     "author": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Nicholas Len",
       "url": "https://rvuedge.com"
     }
+  }
+  </script>
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RVU Edge",
+    "url": "https://rvuedge.com",
+    "description": "RVU Edge - The fastest wRVU tracker for physicians. Track procedures, credentials, MGMA benchmarks, and board cases from medical school through attending.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Nicholas Len"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: VideoObject -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "RVU Edge QuickLog Demo — Log a Full Day in 30 Seconds",
+    "description": "Watch how RVU Edge's QuickLog feature lets physicians log an entire day of CPT codes in under 30 seconds. Type codes continuously with smart parsing — no spaces, no buttons, no wasted time.",
+    "thumbnailUrl": "https://rvuedge.com/images/screenshots/iphone/quick-log.png",
+    "contentUrl": "https://rvuedge.com/images/quicklog_video.mov",
+    "uploadDate": "2026-01-31",
+    "duration": "PT30S"
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is RVU Edge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RVU Edge is the fastest wRVU tracker for physicians. It tracks procedures, work Relative Value Units (wRVUs), credentials, MGMA benchmarks, and board cases from medical school through attending — all in one app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast is RVU Edge for logging procedures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RVU Edge's QuickLog feature lets you log a full day of procedures in under 30 seconds. Type CPT codes continuously without spaces or periods — smart parsing figures out where one code ends and the next begins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RVU Edge support ACGME case logging for residents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. RVU Edge supports ACGME case tracking for 14 surgical and medical specialties, with board case minimums, real-time progress tracking, and exports to board portals including ACGME, ABS, ABU, and more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does RVU Edge cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RVU Edge offers a monthly subscription at $0.99/month with the first month free, or a lifetime access purchase for $19.99 one-time. All features are included in both plans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my data stored in RVU Edge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All your data is stored locally on your device using encrypted database storage. RVU Edge does not upload your procedure logs to any cloud servers. Your data is private and secure."
+        }
+      }
+    ]
   }
   </script>
 
@@ -571,6 +661,34 @@
       </div>
 
       <p class="text-center text-xs text-slate-500 mt-8">Cancel anytime. Your data stays on your device. Prices may vary by region.</p>
+    </div>
+  </section>
+
+
+  <!-- ==================== WHY RVU EDGE ==================== -->
+  <section class="section-dark py-20" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">The Only RVU Tracker Built for Your Entire Career</h2>
+      <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">Most wRVU trackers do one thing. RVU Edge does everything — and does it faster.</p>
+
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 text-slate-300 text-sm leading-relaxed">
+        <div>
+          <h3 class="text-white font-semibold text-base mb-2">The Fastest wRVU Tracker Available</h3>
+          <p>Spreadsheets and clunky apps waste your time. RVU Edge's QuickLog lets physicians enter CPT codes at unprecedented speed — type codes continuously and smart parsing handles the rest. No extra taps, no searching through menus. Attendings use it to track wRVU productivity against MGMA benchmarks for 46 specialties. Residents use it to log ACGME cases and meet board minimums before graduation.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-base mb-2">ACGME Case Logging Made Simple</h3>
+          <p>Residency case logging shouldn't require a desktop computer and 30 minutes of data entry. RVU Edge supports 14 surgical and medical specialties with board-specific export adapters for ACGME, ABS, ABOS, ABU, ABOG, and more. Log cases from your phone between procedures and export directly to your board portal — or use the Chrome extension to auto-fill portal forms.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-base mb-2">MGMA Benchmarks & Practice Analytics</h3>
+          <p>Know where you stand. RVU Edge includes 2025 MGMA benchmark data for 46 specialties, showing your wRVU percentile compared to national physician compensation data. The Practice Analytics spider chart visualizes six dimensions of your clinical practice — Volume, Complexity, Breadth, Consistency, Trend, and Independence — giving you a comprehensive view at a glance.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-base mb-2">Credential Vault & CV Builder</h3>
+          <p>Track medical licenses, DEA registrations, CME credits, and board certifications with expiration alerts so nothing lapses. RVU Edge's CV builder auto-generates a professional curriculum vitae from your complete career data — procedures, credentials, education, and publications — all maintained in one place from medical school onward.</p>
+        </div>
+      </div>
     </div>
   </section>
 
