@@ -113,6 +113,7 @@
         start: 'top 90%',
         once: true,
         onEnter: () => {
+          counter.textContent = prefix + '0' + suffix;
           gsap.to(obj, {
             val: target,
             duration: 1.8,
