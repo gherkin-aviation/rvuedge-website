@@ -659,6 +659,18 @@ body {
   border-bottom: 1px solid var(--glass-border);
 }
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .stat-item {
   text-align: center;
   padding: 1rem;
@@ -951,9 +963,10 @@ body {
   .hero-orb { filter: blur(60px); opacity: 0.5; }
   .hero-particles { display: none; }
   .stat-number { font-size: 1.5rem; }
-  .marquee-track { animation-duration: 20s; }
+  .marquee-track { animation-duration: 20s; gap: 1.5rem; }
+  .marquee-item { font-size: 0.75rem; }
   .career-panel { min-height: auto; padding: 2rem 0; }
-  .quicklog-typing-display { font-size: 1rem; min-width: auto; }
+  .quicklog-typing-display { font-size: 1rem; min-width: auto; padding: 0.75rem 1rem; word-break: break-all; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
