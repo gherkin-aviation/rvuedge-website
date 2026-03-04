@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% if page.hero %}
+<!-- Hero -->
+<section class="pt-28 pb-10 text-center" style="background: linear-gradient(180deg, var(--bg-surface), var(--bg-deep));">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold mb-2 text-white">{{ page.hero_title | default: page.title }}</h1>
+    <p class="text-slate-400">{{ page.hero_subtitle }}</p>
+  </div>
+</section>
+{% endif %}
+
+{% if page.breadcrumbs %}
+<!-- Breadcrumbs -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+  <nav class="text-sm text-slate-500" aria-label="Breadcrumb">
+    <ol class="flex items-center space-x-2">
+      <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+      {% for crumb in page.breadcrumbs %}
+      <li class="flex items-center space-x-2">
+        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        {% if crumb.url %}
+        <a href="{{ crumb.url }}" class="hover:text-white transition-colors">{{ crumb.title | default: crumb.label }}</a>
+        {% else %}
+        <span class="text-slate-400">{{ crumb.title | default: crumb.label }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </nav>
+</div>
+{% endif %}
+
+<!-- Content -->
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="legal-content">
+    {{ content }}
+  </div>
+</main>
+
+{% include cta-download.html %}

@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,8 +177,9 @@
   <!-- Tailwind (compiled, purged) -->
   <link rel="stylesheet" href="css/tailwind.css">
 
-  <!-- AOS (self-hosted) -->
-  <link rel="stylesheet" href="css/vendor/aos.css">
+  <!-- Preconnect CDN hosts -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <!-- Swiper (self-hosted) -->
   <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
@@ -188,6 +192,9 @@
   <link rel="apple-touch-icon" href="images/app-icon.png">
 </head>
 <body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
 
   <!-- ==================== NAVIGATION ==================== -->
   <nav class="navbar" id="navbar">
@@ -204,6 +211,20 @@
           <a href="#features" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a>
           <a href="#gallery" class="text-sm text-slate-400 hover:text-white transition-colors">Gallery</a>
           <a href="#pricing" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
+          <!-- Career Stage Dropdown -->
+          <div class="nav-dropdown relative">
+            <button class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+              Career Stage
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="/students/">Medical Students</a>
+              <a href="/residents/">Residents</a>
+              <a href="/attendings/">Attendings</a>
+            </div>
+          </div>
+          <a href="/resources/rvu-calculator" class="text-sm text-slate-400 hover:text-white transition-colors">Resources</a>
+          <a href="/blog/" class="text-sm text-slate-400 hover:text-white transition-colors">Blog</a>
           <a href="https://apps.apple.com/app/id6758588125" target="_blank" rel="noopener" class="nav-cta">Download</a>
         </div>
 
@@ -221,6 +242,12 @@
     <a href="#features" class="mobile-nav-link">Features</a>
     <a href="#gallery" class="mobile-nav-link">Gallery</a>
     <a href="#pricing" class="mobile-nav-link">Pricing</a>
+    <div class="px-4 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Career Stage</div>
+    <a href="/students/" class="mobile-nav-link pl-8">Medical Students</a>
+    <a href="/residents/" class="mobile-nav-link pl-8">Residents</a>
+    <a href="/attendings/" class="mobile-nav-link pl-8">Attendings</a>
+    <a href="/resources/rvu-calculator" class="mobile-nav-link">Resources</a>
+    <a href="/blog/" class="mobile-nav-link">Blog</a>
     <a href="https://apps.apple.com/app/id6758588125" target="_blank" rel="noopener" class="block mt-6">
       <span class="nav-cta block text-center">Download</span>
     </a>
@@ -230,7 +257,14 @@
   <!-- ==================== HERO ==================== -->
   <section class="hero">
     <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
+
+    <!-- Animated gradient orbs -->
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <!-- CSS particle system -->
+    <div class="hero-particles" id="hero-particles"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -238,27 +272,27 @@
         <!-- Left: Text -->
         <div class="flex-1 text-center lg:text-left pt-20 lg:pt-0">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Your Entire Medical Career.
-            <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"> One App.</span>
+            <span class="hero-word">Your</span> <span class="hero-word">Entire</span> <span class="hero-word">Medical</span> <span class="hero-word">Career.</span>
+            <span class="hero-word bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"> One</span> <span class="hero-word bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">App.</span>
           </h1>
-          <p class="text-lg sm:text-xl text-slate-400 max-w-xl mb-8 mx-auto lg:mx-0">
+          <p class="hero-subtitle text-lg sm:text-xl text-slate-400 max-w-xl mb-8 mx-auto lg:mx-0">
             From your first case as a medical student to partnership as an attending. Every procedure, credential, and benchmark — tracked, organized, and ready.
           </p>
 
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-            <a href="https://apps.apple.com/app/id6758588125" target="_blank" rel="noopener" class="btn-cyan">
+            <a href="https://apps.apple.com/app/id6758588125" target="_blank" rel="noopener" class="btn-cyan hero-cta">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               Download Free
             </a>
-            <a href="#video" class="btn-outline">
+            <a href="#video" class="btn-outline hero-cta">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               Watch Demo
             </a>
           </div>
 
           <!-- Store Badges -->
-          <div class="flex gap-3 justify-center lg:justify-start">
+          <div class="hero-badges flex gap-3 justify-center lg:justify-start">
             <a href="https://apps.apple.com/app/id6758588125" target="_blank" rel="noopener" class="store-badge">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               App Store
@@ -273,7 +307,7 @@
         <!-- Right: Phone -->
         <div class="flex-shrink-0 hero-phone">
           <div class="phone-frame phone-frame-lg">
-            <img src="images/screenshots/iphone/dashboard.png" alt="RVU Edge Dashboard with Practice Profile spider chart">
+            <img src="images/screenshots/iphone/dashboard.png" alt="RVU Edge Dashboard with Practice Profile spider chart" loading="eager">
           </div>
         </div>
 
@@ -282,26 +316,70 @@
   </section>
 
 
-  <!-- ==================== SOCIAL PROOF BAR ==================== -->
-  <section class="social-proof-bar py-5">
-    <div class="max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-center gap-3 text-sm">
-      <div class="flex items-center gap-1">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
+  <!-- ==================== STATS COUNTER BAR ==================== -->
+  <section class="stats-bar py-6">
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="stat-item">
+        <div class="stat-number" data-target="46" data-suffix="">0</div>
+        <div class="stat-label">Specialties</div>
       </div>
-      <span class="font-semibold text-white">5.0 stars</span>
-      <span class="text-slate-400">on the App Store</span>
-      <span class="text-slate-500 hidden sm:inline">|</span>
-      <span class="text-slate-400 hidden sm:inline">Trusted by physicians across 14+ specialties</span>
+      <div class="stat-item">
+        <div class="stat-number" data-target="8000" data-suffix="+">0</div>
+        <div class="stat-label">CPT Codes</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="30" data-suffix="s">0</div>
+        <div class="stat-label">To Log a Day</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="5" data-suffix=".0 ★">0</div>
+        <div class="stat-label">App Store Rating</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SPECIALTY MARQUEE ==================== -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item">General Surgery</span>
+      <span class="marquee-item">Orthopedics</span>
+      <span class="marquee-item">Urology</span>
+      <span class="marquee-item">Cardiology</span>
+      <span class="marquee-item">OB/GYN</span>
+      <span class="marquee-item">ENT</span>
+      <span class="marquee-item">Anesthesiology</span>
+      <span class="marquee-item">Emergency Medicine</span>
+      <span class="marquee-item">Internal Medicine</span>
+      <span class="marquee-item">Neurosurgery</span>
+      <span class="marquee-item">Plastic Surgery</span>
+      <span class="marquee-item">Vascular Surgery</span>
+      <span class="marquee-item">Cardiothoracic</span>
+      <span class="marquee-item">Ophthalmology</span>
+      <span class="marquee-item">Dermatology</span>
+      <span class="marquee-item">Radiology</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item">General Surgery</span>
+      <span class="marquee-item">Orthopedics</span>
+      <span class="marquee-item">Urology</span>
+      <span class="marquee-item">Cardiology</span>
+      <span class="marquee-item">OB/GYN</span>
+      <span class="marquee-item">ENT</span>
+      <span class="marquee-item">Anesthesiology</span>
+      <span class="marquee-item">Emergency Medicine</span>
+      <span class="marquee-item">Internal Medicine</span>
+      <span class="marquee-item">Neurosurgery</span>
+      <span class="marquee-item">Plastic Surgery</span>
+      <span class="marquee-item">Vascular Surgery</span>
+      <span class="marquee-item">Cardiothoracic</span>
+      <span class="marquee-item">Ophthalmology</span>
+      <span class="marquee-item">Dermatology</span>
+      <span class="marquee-item">Radiology</span>
     </div>
   </section>
 
 
   <!-- ==================== REVIEWS ==================== -->
-  <section class="section-darker py-20" data-aos="fade-up">
+  <section class="section-darker py-20 reviews-section reveal">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">What Physicians Are Saying</h2>
 
@@ -351,80 +429,83 @@
 
 
   <!-- ==================== PROMO: YOUR CAREER IS YOUR LEGACY ==================== -->
-  <section class="section-dark py-12" data-aos="fade-up">
+  <section class="section-dark py-12 reveal">
     <div class="max-w-sm mx-auto px-4">
-      <img src="images/promo/career-legacy.png" alt="Your Career Is Your Legacy — Every procedure and milestone defines your path." class="w-full rounded-2xl shadow-2xl shadow-black/40">
+      <img src="images/promo/career-legacy.png" alt="Your Career Is Your Legacy — Every procedure and milestone defines your path." class="w-full rounded-2xl shadow-2xl shadow-black/40" loading="lazy">
     </div>
   </section>
 
 
-  <!-- ==================== CAREER JOURNEY ==================== -->
-  <section class="section-dark py-20" id="career" data-aos="fade-up">
+  <!-- ==================== CAREER JOURNEY (Scroll-Pinned) ==================== -->
+  <section class="section-dark py-20 career-scroll-section" id="career">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Grows With Your Career</h2>
-      <p class="text-slate-400 text-center mb-10 max-w-2xl mx-auto">One app from medical school through attending. Your data carries forward at every transition.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal">Grows With Your Career</h2>
+      <p class="text-slate-400 text-center mb-16 max-w-2xl mx-auto reveal">One app from medical school through attending. Your data carries forward at every transition.</p>
 
-      <!-- Tab Buttons -->
-      <div class="flex flex-wrap justify-center gap-3 mb-10">
-        <button class="career-tab active" data-tab="student">Medical Student</button>
-        <button class="career-tab" data-tab="resident">Resident & Fellow</button>
-        <button class="career-tab" data-tab="attending">Attending</button>
-      </div>
-
-      <!-- Tab: Medical Student -->
-      <div class="tab-content active flex-col md:flex-row items-center gap-10" id="tab-student">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <!-- Left: Scrolling Panels -->
         <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-4">Medical Student</h3>
-          <ul class="check-list text-base">
-            <li>Build your procedure portfolio from day one</li>
-            <li>Track case categories for residency applications</li>
-            <li>Log clinical encounters, rotations, and exposure</li>
-            <li>Every log carries forward when you advance to residency</li>
-            <li>Export case logs for ERAS and program applications</li>
-          </ul>
+          <!-- Panel: Medical Student -->
+          <div class="career-panel" data-career="student">
+            <div class="mb-3">
+              <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Stage 1</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Medical Student</h3>
+            <p class="text-slate-400 mb-4">Start building your career record from day one of clinical rotations.</p>
+            <ul class="check-list text-base">
+              <li>Build your procedure portfolio from day one</li>
+              <li>Track case categories for residency applications</li>
+              <li>Log clinical encounters, rotations, and exposure</li>
+              <li>Every log carries forward when you advance to residency</li>
+              <li>Export case logs for ERAS and program applications</li>
+            </ul>
+          </div>
+
+          <!-- Panel: Resident & Fellow -->
+          <div class="career-panel" data-career="resident">
+            <div class="mb-3">
+              <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Stage 2</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Resident & Fellow</h3>
+            <p class="text-slate-400 mb-4">Meet every board requirement without the administrative burden.</p>
+            <ul class="check-list text-base">
+              <li>ACGME case tracking for 14 surgical and medical specialties</li>
+              <li>Board case minimums with real-time progress tracking</li>
+              <li>Export to board portals — ACGME, ABS, ABU, and more</li>
+              <li>Smart Clipboard for pasting into board portal forms</li>
+              <li>Supervisor tracking and case volume reports</li>
+            </ul>
+          </div>
+
+          <!-- Panel: Attending -->
+          <div class="career-panel" data-career="attending">
+            <div class="mb-3">
+              <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Stage 3</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Attending</h3>
+            <p class="text-slate-400 mb-4">Track productivity, benchmark against peers, and negotiate with data.</p>
+            <ul class="check-list text-base">
+              <li>Real-time wRVU tracking with monthly pace indicators</li>
+              <li>MGMA benchmarks for 46 specialties with 2025 data</li>
+              <li>Practice Analytics spider chart — Volume, Complexity, Breadth, Consistency, Trend, Independence</li>
+              <li>Compensation review data to negotiate fairly</li>
+              <li>Credential vault and auto-generated CV</li>
+            </ul>
+          </div>
         </div>
-        <div class="flex-shrink-0 mt-8 md:mt-0 flex justify-center">
+
+        <!-- Right: Pinned Phone (desktop only) -->
+        <div class="hidden lg:flex career-phone-wrap flex-shrink-0">
           <div class="phone-frame">
-            <img src="images/screenshots/iphone/career-stage.png" alt="Career Stage selection">
+            <img class="career-phone-img" src="images/screenshots/iphone/career-stage.png" alt="RVU Edge career stage view" loading="lazy">
           </div>
         </div>
       </div>
 
-      <!-- Tab: Resident & Fellow -->
-      <div class="tab-content flex-col md:flex-row items-center gap-10" id="tab-resident">
-        <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-4">Resident & Fellow</h3>
-          <ul class="check-list text-base">
-            <li>ACGME case tracking for 14 surgical and medical specialties</li>
-            <li>Board case minimums with real-time progress tracking</li>
-            <li>Export to board portals — ACGME, ABS, ABU, and more</li>
-            <li>Smart Clipboard for pasting into board portal forms</li>
-            <li>Supervisor tracking and case volume reports</li>
-          </ul>
-        </div>
-        <div class="flex-shrink-0 mt-8 md:mt-0 flex justify-center">
-          <div class="phone-frame">
-            <img src="images/screenshots/iphone/import-export.png" alt="Board export formats">
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab: Attending -->
-      <div class="tab-content flex-col md:flex-row items-center gap-10" id="tab-attending">
-        <div class="flex-1">
-          <h3 class="text-2xl font-bold mb-4">Attending</h3>
-          <ul class="check-list text-base">
-            <li>Real-time wRVU tracking with monthly pace indicators</li>
-            <li>MGMA benchmarks for 46 specialties with 2025 data</li>
-            <li>Practice Analytics spider chart — Volume, Complexity, Breadth, Consistency, Trend, Independence</li>
-            <li>Compensation review data to negotiate fairly</li>
-            <li>Credential vault and auto-generated CV</li>
-          </ul>
-        </div>
-        <div class="flex-shrink-0 mt-8 md:mt-0 flex justify-center">
-          <div class="phone-frame">
-            <img src="images/screenshots/iphone/mgma-benchmarks.png" alt="MGMA Benchmark percentiles">
-          </div>
+      <!-- Mobile: Tab fallback -->
+      <div class="lg:hidden mt-8 flex justify-center">
+        <div class="phone-frame">
+          <img src="images/screenshots/iphone/career-stage.png" alt="Career Stage selection" loading="lazy">
         </div>
       </div>
     </div>
@@ -432,21 +513,26 @@
 
 
   <!-- ==================== PROMO: MATCHED? START WITH AN EDGE ==================== -->
-  <section class="section-darker py-12" data-aos="fade-up">
+  <section class="section-darker py-12 reveal">
     <div class="max-w-sm mx-auto px-4">
-      <img src="images/promo/matched-edge.png" alt="Matched? Start with an Edge — Master your residency admin requirements from your first rotation." class="w-full rounded-2xl shadow-2xl shadow-black/40">
+      <img src="images/promo/matched-edge.png" alt="Matched? Start with an Edge — Master your residency admin requirements from your first rotation." class="w-full rounded-2xl shadow-2xl shadow-black/40" loading="lazy">
     </div>
   </section>
 
 
   <!-- ==================== QUICKLOG VIDEO ==================== -->
-  <section class="section-darker py-20 video-section" id="video" data-aos="fade-up">
+  <section class="section-darker py-20 video-section reveal" id="video">
     <div class="video-glow"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">Log a Full Day in 30 Seconds</h2>
-      <p class="text-slate-400 max-w-2xl mx-auto mb-10">
-        Type codes continuously — <span class="text-cyan-400 font-mono font-medium">99213509921499215</span> — done. Smart parsing figures out where one code ends and the next begins.
+      <p class="text-slate-400 max-w-2xl mx-auto mb-6">
+        Type codes continuously — no spaces, no buttons. Smart parsing figures out where one code ends and the next begins.
       </p>
+
+      <!-- Live Typing Animation -->
+      <div class="mb-10">
+        <div class="quicklog-typing-display" id="quicklog-typing"></div>
+      </div>
 
       <div class="flex justify-center">
         <div class="phone-frame phone-frame-lg">
@@ -466,14 +552,14 @@
 
 
   <!-- ==================== FEATURES ==================== -->
-  <section class="section-dark py-20" id="features" data-aos="fade-up">
+  <section class="section-dark py-20" id="features">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Everything You Need. Nothing You Don't.</h2>
-      <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">Designed for speed, built for careers.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 reveal">Everything You Need. Nothing You Don't.</h2>
+      <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto reveal">Designed for speed, built for careers.</p>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Feature 1 -->
-        <div class="glass-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-card feature-card tilt-card">
           <div class="feature-icon mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
@@ -482,7 +568,7 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card feature-card tilt-card">
           <div class="feature-icon mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           </div>
@@ -491,7 +577,7 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card feature-card tilt-card">
           <div class="feature-icon mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           </div>
@@ -500,7 +586,7 @@
         </div>
 
         <!-- Feature 4 -->
-        <div class="glass-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-card feature-card tilt-card">
           <div class="feature-icon mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
@@ -509,7 +595,7 @@
         </div>
 
         <!-- Feature 5 -->
-        <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card feature-card tilt-card">
           <div class="feature-icon mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
@@ -518,7 +604,7 @@
         </div>
 
         <!-- Feature 6 -->
-        <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card feature-card tilt-card">
           <div class="feature-icon mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
@@ -531,15 +617,15 @@
 
 
   <!-- ==================== PROMO: ONE PLATFORM ==================== -->
-  <section class="section-darker py-12" data-aos="fade-up">
+  <section class="section-darker py-12 reveal">
     <div class="max-w-sm mx-auto px-4">
-      <img src="images/promo/one-platform.png" alt="One platform for your career — Track ACGME milestones and wRVU productivity in a single, unified dashboard view." class="w-full rounded-2xl shadow-2xl shadow-black/40">
+      <img src="images/promo/one-platform.png" alt="One platform for your career — Track ACGME milestones and wRVU productivity in a single, unified dashboard view." class="w-full rounded-2xl shadow-2xl shadow-black/40" loading="lazy">
     </div>
   </section>
 
 
   <!-- ==================== SCREENSHOT GALLERY ==================== -->
-  <section class="section-darker py-20" id="gallery" data-aos="fade-up">
+  <section class="section-darker py-20 reveal" id="gallery">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">See It In Action</h2>
       <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">Clean, intuitive design that gets out of your way.</p>
@@ -613,7 +699,7 @@
 
 
   <!-- ==================== PRICING ==================== -->
-  <section class="section-dark py-20" id="pricing" data-aos="fade-up">
+  <section class="section-dark py-20" id="pricing">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Start Free. Stay Forever.</h2>
       <p class="text-slate-400 text-center mb-12 max-w-xl mx-auto">No commitments. Your data stays on your device.</p>
@@ -664,7 +750,7 @@
 
 
   <!-- ==================== COMPETITOR COMPARISON ==================== -->
-  <section class="py-16" data-aos="fade-up">
+  <section class="py-16 reveal">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="comparison-section" onclick="if(event.target.closest('.comparison-toggle')){this.classList.toggle('open')}">
         <div class="comparison-header">
@@ -933,7 +1019,7 @@
 
 
   <!-- ==================== WHY RVU EDGE ==================== -->
-  <section class="section-dark py-20" data-aos="fade-up">
+  <section class="section-dark py-20 reveal">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">The Only RVU Tracker Built for Your Entire Career</h2>
       <p class="text-slate-400 text-center mb-12 max-w-2xl mx-auto">Most wRVU trackers do one thing. RVU Edge does everything — and does it faster.</p>
@@ -961,7 +1047,7 @@
 
 
   <!-- ==================== ORIGIN STORY ==================== -->
-  <section class="origin-strip py-16" data-aos="fade-up">
+  <section class="origin-strip py-16 reveal">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="mb-4">
         <svg class="w-8 h-8 mx-auto text-slate-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
@@ -975,28 +1061,40 @@
 
 
   <!-- ==================== ANDROID WAITLIST ==================== -->
-  <section id="android-waitlist" class="py-16" data-aos="fade-up">
-    <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl font-bold text-white mb-2">Android Coming Soon</h2>
-      <p class="text-slate-400 text-sm mb-6">Get notified when RVU Edge launches on Google Play.</p>
-      <form action="https://formsubmit.co/support@rvuedge.com" method="POST" class="flex gap-2 max-w-md mx-auto">
-        <input type="hidden" name="_subject" value="Android Waitlist Signup">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="email" name="email" required placeholder="you@hospital.edu" class="flex-1 px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-cyan-500">
-        <button type="submit" class="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold transition-colors whitespace-nowrap">Notify Me</button>
-      </form>
-      <p class="text-slate-600 text-xs mt-3">No spam. One email when it's ready.</p>
+  <section id="android-waitlist" class="py-20 reveal">
+    <div class="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card text-center p-8 sm:p-10">
+        <!-- Android icon -->
+        <div style="width:56px;height:56px;margin:0 auto 1.25rem;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.15));">
+          <svg style="width:28px;height:28px;color:#4ade80;" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 2.226a.75.75 0 010 1.06l-1.97 1.97A7.462 7.462 0 0112 4.5a7.46 7.46 0 00-3.553.756l-1.97-1.97a.75.75 0 00-1.06 1.06l1.97 1.97A7.46 7.46 0 004.5 12v.75h15V12a7.46 7.46 0 00-2.887-5.684l1.97-1.97a.75.75 0 000-1.06zM10 10.5a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0zM4.5 14.25v4.5A2.25 2.25 0 006.75 21h10.5a2.25 2.25 0 002.25-2.25v-4.5h-15z"/></svg>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-2">Android Coming Soon</h2>
+        <p class="text-slate-400 text-sm mb-8">Drop your email — we'll notify you the moment RVU Edge hits Google Play.</p>
+
+        <form action="https://formsubmit.co/support@rvuedge.com" method="POST" class="space-y-3 max-w-sm mx-auto">
+          <input type="hidden" name="_subject" value="Android Waitlist Signup">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="email" name="email" required placeholder="you@hospital.edu" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30 transition-all">
+          <button type="submit" class="w-full py-3 rounded-xl font-semibold text-sm text-white transition-all" style="background: linear-gradient(135deg, var(--cyan), var(--blue)); box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);">
+            Notify Me
+          </button>
+        </form>
+
+        <p class="text-slate-600 text-xs mt-4">No spam. One email when it's ready.</p>
+      </div>
     </div>
   </section>
 
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8 mb-8">
+    <div class="footer-glow"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="footer-grid">
         <!-- Brand -->
-        <div>
+        <div class="footer-brand">
           <div class="flex items-center gap-3 mb-4">
             <img src="images/app-icon.png" alt="RVU Edge" class="w-8 h-8 rounded-lg">
             <span class="text-lg font-bold text-white">RVU Edge</span>
@@ -1014,12 +1112,34 @@
           </div>
         </div>
 
+        <!-- For Physicians -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm">For Physicians</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/students/">Medical Students</a></li>
+            <li><a href="/residents/">Residents</a></li>
+            <li><a href="/attendings/">Attendings</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm">Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources/rvu-calculator">RVU Calculator</a></li>
+            <li><a href="/resources/wrvu-tracking-guide">wRVU Tracking Guide</a></li>
+            <li><a href="/resources/mgma-benchmarks-by-specialty">MGMA Benchmarks</a></li>
+            <li><a href="/resources/acgme-case-log-requirements">ACGME Case Logs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+
         <!-- Legal -->
         <div>
           <h4 class="text-white font-semibold mb-4 text-sm">Legal</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
           </ul>
         </div>
 
@@ -1027,7 +1147,7 @@
         <div>
           <h4 class="text-white font-semibold mb-4 text-sm">Support</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="support.html">Help & FAQ</a></li>
+            <li><a href="/support/">Help & FAQ</a></li>
             <li><a href="mailto:support@rvuedge.com">support@rvuedge.com</a></li>
           </ul>
         </div>
@@ -1043,30 +1163,65 @@
 
   <!-- ==================== SCRIPTS ==================== -->
 
-  <!-- AOS (self-hosted) -->
-  <script src="js/vendor/aos.js"></script>
+  <!-- GSAP + ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Vanilla Tilt (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
 
   <!-- Swiper (self-hosted) -->
   <script src="js/vendor/swiper-bundle.min.js"></script>
 
+  <!-- Master Animations -->
+  <script src="js/animations.js" defer></script>
+
   <script>
-    // ---- AOS Init ----
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 80,
-    });
+    // ---- Generate Floating Medical Icons (particles with doctor feel) ----
+    (function() {
+      var container = document.getElementById('hero-particles');
+      if (!container || window.innerWidth < 768) return;
+
+      // Medical icon SVGs — clean filled shapes with soft edges
+      var icons = [
+        // Heart (solid, clean)
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" opacity="0.8"/></svg>',
+        // Medical cross (solid, rounded feel)
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 2a1 1 0 00-1 1v5H3a1 1 0 00-1 1v6a1 1 0 001 1h5v5a1 1 0 001 1h6a1 1 0 001-1v-5h5a1 1 0 001-1V9a1 1 0 00-1-1h-5V3a1 1 0 00-1-1H9z" opacity="0.8"/></svg>',
+        // Pill capsule (solid)
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4.22 11.29l8.49-8.49a4.25 4.25 0 016.01 6.01l-8.49 8.49a4.25 4.25 0 01-6.01-6.01zm4.24 1.77l4.24-4.24 1.77 1.77-4.24 4.24-1.77-1.77z" opacity="0.8"/></svg>',
+        // Heartbeat line (clean single path)
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 13.5h3.17l1.83-5 2.83 10 2.34-7 1.66 2H21v-2h-5.17l-2.66-3.2L10.83 16 8 6l-2.83 8H3v-0.5z" opacity="0.8"/></svg>',
+        // Stethoscope (solid, simplified)
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 8a2 2 0 11-4 0 2 2 0 014 0zm-2 3.5c-1.38 0-2.5-1.12-2.5-2.5h-1c0 1.77 1.3 3.24 3 3.47V16c0 2.21-1.79 4-4 4s-4-1.79-4-4v-1.17A5.003 5.003 0 005 10V4h2v6a3 3 0 006 0V4h2v6c0 .34-.03.67-.1 1H17v5c0 3.31-2.69 6-6 6s-6-2.69-6-6v-2.26A3.5 3.5 0 017 10.5V4a1 1 0 00-1-1H4a1 1 0 00-1 1v6a5 5 0 004.5 4.97V16c0 3.31 2.69 6 6 6s6-2.69 6-6v-4.53z" opacity="0.7"/></svg>',
+        // Shield / protection (clean)
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" opacity="0.8"/></svg>',
+      ];
+
+      for (var i = 0; i < 14; i++) {
+        var el = document.createElement('div');
+        el.className = 'medical-float-icon';
+        el.innerHTML = icons[i % icons.length];
+        el.style.left = (5 + Math.random() * 90) + '%';
+        el.style.animationDuration = (10 + Math.random() * 14) + 's';
+        el.style.animationDelay = (Math.random() * 8) + 's';
+        var size = 24 + Math.random() * 28;
+        el.style.width = size + 'px';
+        el.style.height = size + 'px';
+        container.appendChild(el);
+      }
+    })();
 
     // ---- Navbar Scroll ----
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
     // ---- Mobile Menu ----
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileOverlay = document.getElementById('mobile-overlay');
+    var hamburgerBtn = document.getElementById('hamburger-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var mobileOverlay = document.getElementById('mobile-overlay');
 
     function toggleMobileMenu() {
       mobileMenu.classList.toggle('open');
@@ -1077,41 +1232,31 @@
     hamburgerBtn.addEventListener('click', toggleMobileMenu);
     mobileOverlay.addEventListener('click', toggleMobileMenu);
 
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
         if (mobileMenu.classList.contains('open')) toggleMobileMenu();
       });
     });
 
-    // ---- Career Tabs ----
-    document.querySelectorAll('.career-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.career-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-      });
-    });
-
     // ---- QuickLog Video — Autoplay on scroll ----
-    const video = document.getElementById('quicklog-video');
-    const playBtn = document.getElementById('video-play-btn');
-    let videoPlaying = false;
+    var video = document.getElementById('quicklog-video');
+    var playBtn = document.getElementById('video-play-btn');
+    var videoPlaying = false;
 
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var videoObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting && !videoPlaying) {
-          video.play().then(() => {
+          video.play().then(function() {
             videoPlaying = true;
             playBtn.querySelector('span').textContent = 'Playing';
-          }).catch(() => {});
+          }).catch(function() {});
         }
       });
     }, { threshold: 0.5 });
 
     videoObserver.observe(video);
 
-    playBtn.addEventListener('click', () => {
+    playBtn.addEventListener('click', function() {
       if (video.paused) {
         video.play();
         videoPlaying = true;

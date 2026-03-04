@@ -1,0 +1,28 @@
+<div class="scroll-progress" id="scroll-progress"></div>
+<nav class="navbar scrolled">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="/" class="flex items-center gap-3">
+        <img src="{{ '/images/app-icon.png' | relative_url }}" alt="RVU Edge" class="w-8 h-8 rounded-lg">
+        <span class="text-lg font-bold text-white">RVU Edge</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
+        <div class="nav-dropdown relative">
+          <button class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+            Career Stage
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="{{ '/students/' | relative_url }}">Medical Students</a>
+            <a href="{{ '/residents/' | relative_url }}">Residents</a>
+            <a href="{{ '/attendings/' | relative_url }}">Attendings</a>
+          </div>
+        </div>
+        <a href="{{ '/resources/rvu-calculator' | relative_url }}" class="text-sm text-slate-400 hover:text-white transition-colors">Resources</a>
+        <a href="{{ '/blog/' | relative_url }}" class="text-sm text-slate-400 hover:text-white transition-colors">Blog</a>
+        <a href="{{ '/support/' | relative_url }}" class="text-sm text-slate-400 hover:text-white transition-colors">Support</a>
+      </div>
+    </div>
+  </div>
+</nav>

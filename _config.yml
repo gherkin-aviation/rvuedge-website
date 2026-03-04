@@ -1,0 +1,46 @@
+# RVU Edge Website
+title: RVU Edge
+description: "The fastest wRVU tracker for physicians. One-tap rapid CPT code entry, MGMA benchmarks, goal tracking. Built by a fighter pilot for his surgeon wife."
+url: "https://rvuedge.com"
+baseurl: ""
+
+# Author
+author:
+  name: Nicholas Len
+  email: support@rvuedge.com
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+
+# Plugins (natively supported by GitHub Pages)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Nicholas Len"
+
+# Exclude from build
+exclude:
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock

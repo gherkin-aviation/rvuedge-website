@@ -1,0 +1,77 @@
+---
+layout: default
+title: "Blog — RVU Edge | wRVU Tracking Tips, ACGME Guides & Physician Resources"
+description: "Expert articles on wRVU tracking, ACGME case log requirements, MGMA benchmarks, and physician productivity. Practical guides for residents, students, and attendings."
+keywords: "RVU blog, wRVU tracking tips, physician productivity blog, ACGME guides, MGMA benchmarks articles, medical resident resources"
+---
+
+  <!-- Hero -->
+  <section class="pt-28 pb-10 text-center" style="background: linear-gradient(180deg, var(--bg-surface), var(--bg-deep));">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-2">Blog</h1>
+      <p class="text-slate-400 text-lg">Guides, tips, and insights for physician productivity</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <nav class="text-sm text-slate-500" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="hover:text-white">Home</a></li>
+        <li class="flex items-center space-x-2">
+          <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-slate-400">Blog</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Blog Posts -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    {% if site.posts.size > 0 %}
+    <div class="space-y-6">
+      {% for post in site.posts %}
+      <article class="blog-post-card">
+        <div class="flex items-center text-sm text-slate-500 mb-2 space-x-4">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          {% if post.reading_time %}
+          <span>{{ post.reading_time }} min read</span>
+          {% endif %}
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+          <a href="{{ post.url }}" class="hover:text-cyan-400">{{ post.title }}</a>
+        </h3>
+        <p class="text-slate-400 mb-3">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ post.url }}" class="text-cyan-400 text-sm font-medium hover:underline">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-16">
+      <h2 class="text-2xl font-bold text-white mb-4">Coming Soon</h2>
+      <p class="text-slate-400 mb-8 max-w-lg mx-auto">
+        We're working on in-depth guides about wRVU tracking, ACGME case log requirements, MGMA benchmarks, and more. Check back soon!
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+        <a href="/resources/rvu-calculator.html" class="glass-card block hover:border-cyan-500/30 transition-colors">
+          <h3 class="font-semibold text-white mb-1">RVU Calculator & Guide</h3>
+          <p class="text-slate-400 text-sm">Learn about RVUs and wRVU calculations</p>
+        </a>
+        <a href="/resources/acgme-case-log-requirements.html" class="glass-card block hover:border-cyan-500/30 transition-colors">
+          <h3 class="font-semibold text-white mb-1">ACGME Case Log Requirements</h3>
+          <p class="text-slate-400 text-sm">Minimum cases by specialty</p>
+        </a>
+        <a href="/resources/mgma-benchmarks-by-specialty.html" class="glass-card block hover:border-cyan-500/30 transition-colors">
+          <h3 class="font-semibold text-white mb-1">MGMA Benchmarks</h3>
+          <p class="text-slate-400 text-sm">wRVU benchmarks by specialty</p>
+        </a>
+        <a href="/resources/wrvu-tracking-guide.html" class="glass-card block hover:border-cyan-500/30 transition-colors">
+          <h3 class="font-semibold text-white mb-1">wRVU Tracking Guide</h3>
+          <p class="text-slate-400 text-sm">Compare tracking methods</p>
+        </a>
+      </div>
+    </div>
+    {% endif %}
+  </main>
+
+  {% include cta-download.html heading="Start Tracking Your wRVUs Today" subheading="Download RVU Edge and see the difference speed makes." %}

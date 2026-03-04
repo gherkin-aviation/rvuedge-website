@@ -1,0 +1,493 @@
+---
+layout: page
+title: "RVU Calculator & Guide — What Are RVUs and How to Calculate wRVUs"
+description: "Learn what RVUs are, how to calculate work RVUs (wRVUs), and see wRVU values for common CPT codes. Free RVU reference guide for physicians."
+keywords: "RVU calculator, wRVU calculator, what is an RVU, work RVU, RVU values, CPT code RVU, wRVU values by CPT code, RVU formula, relative value unit"
+hero: true
+hero_title: "RVU Calculator & Complete Guide"
+hero_subtitle: "Everything physicians need to know about Relative Value Units"
+breadcrumbs:
+  - title: "Resources"
+    url: /resources/rvu-calculator.html
+  - title: "RVU Calculator & Guide"
+cta_heading: "Track Your wRVUs Automatically"
+cta_subheading: "Stop calculating manually. RVU Edge tracks wRVUs with one-tap CPT entry."
+schema: |
+  <!-- FAQPage + WebPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://rvuedge.com/resources/rvu-calculator.html",
+        "name": "RVU Calculator & Guide — What Are RVUs and How to Calculate wRVUs",
+        "description": "Learn what RVUs are, how to calculate work RVUs (wRVUs), and see wRVU values for common CPT codes. Free RVU reference guide for physicians.",
+        "url": "https://rvuedge.com/resources/rvu-calculator.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "RVU Edge"
+        },
+        "datePublished": "2026-03-04",
+        "dateModified": "2026-03-04"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an RVU in medicine?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An RVU (Relative Value Unit) is a standardized measure created by CMS to determine how much a physician service is worth relative to other services. Each CPT code is assigned three RVU components: work RVU (wRVU), practice expense RVU (PE RVU), and malpractice RVU (MP RVU). These values are used to calculate Medicare reimbursement and are widely adopted by private payers and employer compensation models."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate wRVUs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate the Medicare payment for a service, use the formula: Total Payment = [(wRVU × Work GPCI) + (PE RVU × PE GPCI) + (MP RVU × MP GPCI)] × Conversion Factor. The 2026 conversion factor is $32.35. For example, CPT 99214 has a wRVU of 1.92. However, for physician compensation tracking, most organizations simply sum the wRVU values for all CPT codes billed during a period."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good wRVU benchmark for physicians?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "wRVU benchmarks vary significantly by specialty. MGMA publishes annual benchmarks showing median and percentile data. For example, a family medicine physician at the median may produce around 4,500-5,000 wRVUs per year, while a general surgeon at the median may produce 6,000-7,000. Compensation is often tied to these benchmarks, with bonuses for exceeding the median or 75th percentile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are wRVUs important for physician compensation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "wRVUs are the most common productivity metric used in physician compensation models. Many employment contracts include a base salary plus a wRVU-based bonus for production above a threshold. Tracking your wRVUs accurately ensures you receive fair compensation, helps you negotiate contracts using MGMA benchmark data, and identifies any undercounting of billable work."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+---
+
+<!-- Opening Paragraph - Featured Snippet Optimized -->
+<p class="text-lg mb-6">
+  An <strong>RVU (Relative Value Unit)</strong> is a standardized measure used by the Centers for Medicare &amp; Medicaid Services (CMS) to determine the value of physician services. RVUs quantify the relative effort, skill, and resources required for each medical procedure or office visit identified by a CPT code. The <strong>work RVU (wRVU)</strong> component specifically measures physician time, effort, and expertise, and is the primary metric used in productivity-based compensation models across the United States.
+</p>
+
+<p class="text-slate-400 mb-10">
+  This guide explains what RVUs are, how to calculate them, provides a reference table of wRVU values for common CPT codes, and discusses why tracking wRVUs is essential for maximizing your compensation. Whether you are negotiating a new contract or verifying your monthly productivity, understanding RVUs is a foundational skill for every practicing physician.
+</p>
+
+
+<!-- Section: What Are RVUs -->
+<h2 class="text-2xl font-bold text-white mt-12 mb-4">What Are RVUs (Relative Value Units)?</h2>
+
+<p class="mb-4">
+  The Resource-Based Relative Value Scale (RBRVS) was developed by CMS in 1992 to create a standardized method for valuing physician services under Medicare. Rather than allowing fees to vary arbitrarily, CMS assigns each CPT code a set of Relative Value Units that reflect the true cost and complexity of delivering that service.
+</p>
+
+<p class="mb-4">
+  Every CPT code is assigned three RVU components:
+</p>
+
+<ul class="list-disc ml-6 mb-6 space-y-2">
+  <li><strong>Work RVU (wRVU)</strong> &mdash; Reflects the physician's time, technical skill, effort, judgment, and stress involved in performing the service. This is the component most commonly used for compensation benchmarking and typically accounts for about 50% of the total RVU.</li>
+  <li><strong>Practice Expense RVU (PE RVU)</strong> &mdash; Covers the overhead costs of running a practice, including rent, equipment, supplies, and non-physician staff salaries. PE RVUs differ depending on whether the service is performed in a facility (hospital) or non-facility (office) setting.</li>
+  <li><strong>Malpractice RVU (MP RVU)</strong> &mdash; Accounts for the professional liability insurance costs associated with providing that service. Higher-risk procedures carry higher MP RVU values.</li>
+</ul>
+
+<p class="mb-4">
+  These three components are combined with the <strong>Geographic Practice Cost Index (GPCI)</strong>, which adjusts for regional cost differences, and the <strong>Conversion Factor (CF)</strong>, a dollar amount set annually by CMS. For 2026, the Medicare conversion factor is <strong>$32.35</strong>. The GPCI ensures that a physician in Manhattan, where costs of living and practice expenses are higher, receives a different payment than a physician in rural Kansas for the same procedure.
+</p>
+
+<p class="mb-6">
+  While CMS created the RVU system for Medicare reimbursement, it has been broadly adopted across the healthcare industry. Most private payers, hospital systems, and physician employment groups use wRVUs as the standard unit of productivity measurement. Understanding RVUs is not optional &mdash; it is essential for any physician who wants to evaluate their compensation accurately.
+</p>
+
+
+<!-- Section: How to Calculate wRVUs -->
+<h2 class="text-2xl font-bold text-white mt-12 mb-4">How to Calculate wRVUs</h2>
+
+<p class="mb-4">
+  The Medicare payment formula combines all three RVU components, adjusts them for geographic variation, and multiplies by the conversion factor:
+</p>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-6 mb-6">
+  <p class="font-mono text-sm sm:text-base text-slate-300 text-center">
+    <strong>Total Payment</strong> = [(wRVU &times; Work GPCI) + (PE RVU &times; PE GPCI) + (MP RVU &times; MP GPCI)] &times; Conversion Factor
+  </p>
+</div>
+
+<p class="mb-4">
+  Let's walk through a concrete example using <strong>CPT 99214</strong>, a level 4 established patient office visit &mdash; one of the most commonly billed codes in outpatient medicine.
+</p>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">Example 1: CPT 99214 (Established Patient, Level 4)</h3>
+
+<p class="mb-2">
+  The 2026 RVU values for CPT 99214 are:
+</p>
+
+<ul class="list-disc ml-6 mb-4 space-y-1">
+  <li>Work RVU: <strong>1.92</strong></li>
+  <li>Practice Expense RVU (non-facility): <strong>1.91</strong></li>
+  <li>Malpractice RVU: <strong>0.10</strong></li>
+</ul>
+
+<p class="mb-2">
+  Assuming a GPCI of 1.000 for all three components (national average):
+</p>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-4 mb-6">
+  <p class="font-mono text-sm text-slate-300">
+    Payment = [(1.92 &times; 1.000) + (1.91 &times; 1.000) + (0.10 &times; 1.000)] &times; $32.35<br>
+    Payment = [1.92 + 1.91 + 0.10] &times; $32.35<br>
+    Payment = 3.93 &times; $32.35<br>
+    Payment = <strong>$127.14</strong>
+  </p>
+</div>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">Example 2: CPT 99213 (Established Patient, Level 3)</h3>
+
+<p class="mb-2">
+  CPT 99213 is a lower-complexity established patient visit:
+</p>
+
+<ul class="list-disc ml-6 mb-4 space-y-1">
+  <li>Work RVU: <strong>1.30</strong></li>
+  <li>Practice Expense RVU (non-facility): <strong>1.48</strong></li>
+  <li>Malpractice RVU: <strong>0.08</strong></li>
+</ul>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-4 mb-6">
+  <p class="font-mono text-sm text-slate-300">
+    Payment = [(1.30 &times; 1.000) + (1.48 &times; 1.000) + (0.08 &times; 1.000)] &times; $32.35<br>
+    Payment = 2.86 &times; $32.35<br>
+    Payment = <strong>$92.52</strong>
+  </p>
+</div>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">Example 3: CPT 99215 (Established Patient, Level 5)</h3>
+
+<p class="mb-2">
+  CPT 99215 is a high-complexity established patient visit:
+</p>
+
+<ul class="list-disc ml-6 mb-4 space-y-1">
+  <li>Work RVU: <strong>2.80</strong></li>
+  <li>Practice Expense RVU (non-facility): <strong>2.11</strong></li>
+  <li>Malpractice RVU: <strong>0.14</strong></li>
+</ul>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-4 mb-6">
+  <p class="font-mono text-sm text-slate-300">
+    Payment = [(2.80 &times; 1.000) + (2.11 &times; 1.000) + (0.14 &times; 1.000)] &times; $32.35<br>
+    Payment = 5.05 &times; $32.35<br>
+    Payment = <strong>$163.37</strong>
+  </p>
+</div>
+
+<p class="mb-6">
+  Notice the significant difference in both wRVU value and total payment between a 99213 (1.30 wRVU) and a 99215 (2.80 wRVU). Accurate documentation and appropriate code selection directly impact your productivity metrics and, consequently, your compensation. Even a single level of undercoding per visit can cost thousands of wRVUs over the course of a year.
+</p>
+
+<p class="mb-6">
+  <strong>For compensation tracking purposes</strong>, most physician employment contracts focus exclusively on the wRVU component. Your total wRVU production for a period is simply the sum of all wRVU values for every CPT code you billed. For example, if you see 20 patients in a day and bill ten 99214s and ten 99213s, your daily wRVU total would be (10 &times; 1.92) + (10 &times; 1.30) = <strong>32.20 wRVUs</strong>.
+</p>
+
+
+<!-- Section: wRVU Values Table -->
+<h2 class="text-2xl font-bold text-white mt-12 mb-4">wRVU Values for Common CPT Codes</h2>
+
+<p class="mb-6">
+  The table below lists wRVU and total RVU values for commonly billed CPT codes across multiple specialties. Use this as a quick reference when estimating your daily or monthly productivity.
+</p>
+
+<div class="overflow-x-auto mb-4">
+  <table>
+    <thead>
+      <tr>
+        <th>CPT Code</th>
+        <th>Description</th>
+        <th>wRVU</th>
+        <th>Total RVU</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="4" class="font-semibold bg-white/5 text-white">Evaluation &amp; Management (E&amp;M)</td>
+      </tr>
+      <tr>
+        <td>99203</td>
+        <td>New patient office visit, level 3</td>
+        <td>1.60</td>
+        <td>3.28</td>
+      </tr>
+      <tr>
+        <td>99204</td>
+        <td>New patient office visit, level 4</td>
+        <td>2.60</td>
+        <td>4.56</td>
+      </tr>
+      <tr>
+        <td>99205</td>
+        <td>New patient office visit, level 5</td>
+        <td>3.50</td>
+        <td>5.95</td>
+      </tr>
+      <tr>
+        <td>99213</td>
+        <td>Established patient office visit, level 3</td>
+        <td>1.30</td>
+        <td>2.86</td>
+      </tr>
+      <tr>
+        <td>99214</td>
+        <td>Established patient office visit, level 4</td>
+        <td>1.92</td>
+        <td>3.93</td>
+      </tr>
+      <tr>
+        <td>99215</td>
+        <td>Established patient office visit, level 5</td>
+        <td>2.80</td>
+        <td>5.05</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="font-semibold bg-white/5 text-white">Hospital Inpatient Care</td>
+      </tr>
+      <tr>
+        <td>99221</td>
+        <td>Initial hospital care, low complexity</td>
+        <td>1.92</td>
+        <td>2.70</td>
+      </tr>
+      <tr>
+        <td>99222</td>
+        <td>Initial hospital care, moderate complexity</td>
+        <td>2.61</td>
+        <td>3.54</td>
+      </tr>
+      <tr>
+        <td>99223</td>
+        <td>Initial hospital care, high complexity</td>
+        <td>3.86</td>
+        <td>5.10</td>
+      </tr>
+      <tr>
+        <td>99231</td>
+        <td>Subsequent hospital care, low complexity</td>
+        <td>0.76</td>
+        <td>1.12</td>
+      </tr>
+      <tr>
+        <td>99232</td>
+        <td>Subsequent hospital care, moderate complexity</td>
+        <td>1.39</td>
+        <td>1.96</td>
+      </tr>
+      <tr>
+        <td>99233</td>
+        <td>Subsequent hospital care, high complexity</td>
+        <td>2.00</td>
+        <td>2.78</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="font-semibold bg-white/5 text-white">Critical Care</td>
+      </tr>
+      <tr>
+        <td>99291</td>
+        <td>Critical care, first 30-74 minutes</td>
+        <td>4.50</td>
+        <td>6.41</td>
+      </tr>
+      <tr>
+        <td>99292</td>
+        <td>Critical care, each additional 30 minutes</td>
+        <td>2.25</td>
+        <td>2.89</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="font-semibold bg-white/5 text-white">Surgical Procedures</td>
+      </tr>
+      <tr>
+        <td>47562</td>
+        <td>Laparoscopic cholecystectomy</td>
+        <td>10.33</td>
+        <td>16.08</td>
+      </tr>
+      <tr>
+        <td>47563</td>
+        <td>Lap cholecystectomy with cholangiography</td>
+        <td>12.14</td>
+        <td>18.42</td>
+      </tr>
+      <tr>
+        <td>44970</td>
+        <td>Laparoscopic appendectomy</td>
+        <td>8.84</td>
+        <td>13.77</td>
+      </tr>
+      <tr>
+        <td>27447</td>
+        <td>Total knee arthroplasty</td>
+        <td>20.72</td>
+        <td>33.54</td>
+      </tr>
+      <tr>
+        <td>27130</td>
+        <td>Total hip arthroplasty</td>
+        <td>20.72</td>
+        <td>33.89</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="font-semibold bg-white/5 text-white">Endoscopy &amp; Procedures</td>
+      </tr>
+      <tr>
+        <td>43239</td>
+        <td>Upper GI endoscopy with biopsy</td>
+        <td>4.42</td>
+        <td>7.10</td>
+      </tr>
+      <tr>
+        <td>45380</td>
+        <td>Colonoscopy with biopsy</td>
+        <td>4.57</td>
+        <td>7.35</td>
+      </tr>
+      <tr>
+        <td>36556</td>
+        <td>Central venous catheter insertion, non-tunneled</td>
+        <td>2.50</td>
+        <td>3.84</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="text-sm text-slate-500 mb-8">
+  <em>Values from 2026 CMS Physician Fee Schedule. Verify current values at <a href="https://www.cms.gov/medicare/payment/fee-schedules/physician" class="text-cyan-400 hover:underline">cms.gov</a>.</em>
+</p>
+
+
+<!-- Section: Why Tracking wRVUs Matters -->
+<h2 class="text-2xl font-bold text-white mt-12 mb-4">Why Tracking wRVUs Matters for Compensation</h2>
+
+<p class="mb-4">
+  For most employed physicians in the United States, compensation is tied directly to wRVU production. The era of straight salary models is fading. According to industry surveys, more than 70% of physician employment contracts now include a productivity component, and wRVUs are the standard unit of measurement.
+</p>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">Productivity-Based Compensation Models</h3>
+
+<p class="mb-4">
+  The most common compensation structures include a base salary with a wRVU threshold, above which you earn an additional per-wRVU rate. For example, your contract might guarantee a base salary tied to producing 4,000 wRVUs annually, with a bonus of $45-$65 per wRVU above that threshold. Others use a pure eat-what-you-kill model where your entire compensation is calculated as a dollar-per-wRVU rate multiplied by your total production. In either case, every wRVU counts &mdash; literally.
+</p>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">MGMA Benchmarks</h3>
+
+<p class="mb-4">
+  The Medical Group Management Association (MGMA) publishes annual compensation and production data broken down by specialty. These benchmarks are the industry standard for evaluating whether your compensation is fair relative to your peers. Employers use MGMA data to set wRVU thresholds and per-wRVU rates, and you should use them to negotiate from a position of knowledge. Knowing where you fall &mdash; 25th percentile, median, 75th percentile, or 90th percentile &mdash; gives you concrete leverage. For a detailed breakdown, see our <a href="/resources/mgma-benchmarks-by-specialty.html" class="text-cyan-400 hover:underline">MGMA Benchmarks by Specialty</a> guide.
+</p>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">Contract Negotiation Leverage</h3>
+
+<p class="mb-4">
+  When you can demonstrate with data that you consistently produce at the 75th or 90th percentile for your specialty, you have powerful leverage in contract negotiations. Accurate wRVU tracking gives you that data. Without it, you are relying on your employer's billing reports, which may not reflect your actual clinical effort &mdash; particularly if there are billing delays, coding downgrades, or missing charges.
+</p>
+
+<h3 class="text-xl font-semibold text-white mt-8 mb-3">Identifying Undercounting</h3>
+
+<p class="mb-6">
+  One of the most common and costly problems physicians face is wRVU undercounting. This can happen due to missed charges (procedures performed but never billed), coding downgrades by billing departments, delayed charge entry, or failure to bill for time-based services like critical care or prolonged visits. By independently tracking your wRVUs at the point of care, you create a personal record that can be compared against your employer's reports. Many physicians discover discrepancies of 5-15% when they start tracking independently &mdash; discrepancies that translate directly into lost compensation. For a step-by-step approach, read our <a href="/resources/wrvu-tracking-guide.html" class="text-cyan-400 hover:underline">wRVU Tracking Guide</a>.
+</p>
+
+
+<!-- Section: Common Questions (FAQ) -->
+<h2 class="text-2xl font-bold text-white mt-12 mb-6">Common Questions About RVUs</h2>
+
+<div class="space-y-4 mb-12">
+
+  <details class="glass-card group">
+    <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+      <span>What is the difference between wRVU and total RVU?</span>
+      <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </summary>
+    <div class="mt-3">
+      <p>The <strong>wRVU (work RVU)</strong> measures only the physician's time, skill, and effort for a service. The <strong>total RVU</strong> includes the work component plus practice expense (PE RVU) and malpractice (MP RVU) components. For physician compensation purposes, employers almost exclusively use the wRVU component, since PE and MP costs are borne by the practice or health system rather than the individual physician.</p>
+    </div>
+  </details>
+
+  <details class="glass-card group">
+    <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+      <span>How often do RVU values change?</span>
+      <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </summary>
+    <div class="mt-3">
+      <p>CMS updates the Physician Fee Schedule annually. RVU values, the conversion factor, and GPCI adjustments can all change each calendar year. The AMA's RVU Update Committee (RUC) reviews and recommends RVU values, and CMS publishes proposed and final rules typically in the summer and fall. It is important to verify that any RVU tracking tool or reference table you use reflects the current year's values.</p>
+    </div>
+  </details>
+
+  <details class="glass-card group">
+    <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+      <span>Do modifiers affect wRVU values?</span>
+      <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </summary>
+    <div class="mt-3">
+      <p>Yes. Certain modifiers reduce the wRVU value assigned to a procedure. For example, modifier <strong>-80</strong> (assistant surgeon) typically reduces the wRVU to 16% of the full value. Modifier <strong>-62</strong> (co-surgeon) splits the wRVU at 62.5% for each surgeon. Modifier <strong>-52</strong> (reduced services) may lower the wRVU proportionally. When tracking your wRVUs, it is critical to account for modifiers to ensure your totals accurately reflect what will appear on your employer's productivity reports.</p>
+    </div>
+  </details>
+
+  <details class="glass-card group">
+    <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+      <span>What is a GPCI and how does it affect my payment?</span>
+      <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </summary>
+    <div class="mt-3">
+      <p>The <strong>Geographic Practice Cost Index (GPCI)</strong> is a CMS adjustment factor that accounts for regional differences in the cost of practicing medicine. There is a separate GPCI for each of the three RVU components (work, practice expense, and malpractice). Areas with higher costs of living, such as San Francisco or New York City, have GPCIs greater than 1.0, which increases the payment. Rural or lower-cost areas may have GPCIs below 1.0. The GPCI does not change your wRVU count &mdash; it only affects the dollar payment per RVU.</p>
+    </div>
+  </details>
+
+  <details class="glass-card group">
+    <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+      <span>How many wRVUs should I be producing?</span>
+      <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </summary>
+    <div class="mt-3">
+      <p>wRVU production targets vary significantly by specialty, practice setting, and employment model. The best reference is the <a href="/resources/mgma-benchmarks-by-specialty.html" class="text-cyan-400 hover:underline">MGMA annual benchmark data</a>, which provides median and percentile breakdowns by specialty. As a general reference, primary care physicians at the median produce approximately 4,200-5,500 wRVUs per year, while surgical subspecialists may produce 7,000-12,000 or more. Compare your production to the appropriate specialty benchmark rather than a single universal number.</p>
+    </div>
+  </details>
+
+</div>
+
+
+<!-- Internal Links / Related Resources -->
+<h2 class="text-2xl font-bold text-white mt-12 mb-6">Related Resources</h2>
+
+<div class="grid sm:grid-cols-2 gap-4 mb-8">
+  <a href="/resources/mgma-benchmarks-by-specialty.html" class="glass-card block hover:border-cyan-500/30 transition-colors">
+    <h3 class="font-semibold text-white mb-1">MGMA Benchmarks by Specialty</h3>
+    <p class="text-slate-400 text-sm">See median wRVU and compensation data for every major specialty</p>
+  </a>
+  <a href="/resources/wrvu-tracking-guide.html" class="glass-card block hover:border-cyan-500/30 transition-colors">
+    <h3 class="font-semibold text-white mb-1">wRVU Tracking Guide</h3>
+    <p class="text-slate-400 text-sm">Step-by-step guide to tracking your wRVUs and catching missed charges</p>
+  </a>
+  <a href="/attendings/" class="glass-card block hover:border-cyan-500/30 transition-colors">
+    <h3 class="font-semibold text-white mb-1">RVU Edge for Attendings</h3>
+    <p class="text-slate-400 text-sm">How RVU Edge helps attending physicians maximize productivity tracking</p>
+  </a>
+</div>
