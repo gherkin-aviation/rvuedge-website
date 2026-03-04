@@ -567,8 +567,14 @@ body {
   background: linear-gradient(90deg, var(--cyan), var(--blue));
   transform-origin: left;
   transform: scaleX(0);
-  z-index: 200;
+  z-index: 300;
   pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .scroll-progress {
+    height: 4px;
+  }
 }
 
 /* ---------- Hero Animated Orbs ---------- */
