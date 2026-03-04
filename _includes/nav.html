@@ -1,12 +1,14 @@
 <div class="scroll-progress" id="scroll-progress"></div>
-<nav class="navbar scrolled">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="navbar scrolled" id="navbar">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <a href="/" class="flex items-center gap-3">
         <img src="{{ '/images/app-icon.png' | relative_url }}" alt="RVU Edge" class="w-8 h-8 rounded-lg">
         <span class="text-lg font-bold text-white">RVU Edge</span>
       </a>
-      <div class="flex items-center gap-6">
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6">
         <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
         <div class="nav-dropdown relative">
           <button class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1">
@@ -23,6 +25,43 @@
         <a href="{{ '/blog/' | relative_url }}" class="text-sm text-slate-400 hover:text-white transition-colors">Blog</a>
         <a href="{{ '/support/' | relative_url }}" class="text-sm text-slate-400 hover:text-white transition-colors">Support</a>
       </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/" class="mobile-nav-link">Home</a>
+  <div style="padding:0.5rem 0;font-size:0.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;">Career Stage</div>
+  <a href="{{ '/students/' | relative_url }}" class="mobile-nav-link" style="padding-left:1rem;">Medical Students</a>
+  <a href="{{ '/residents/' | relative_url }}" class="mobile-nav-link" style="padding-left:1rem;">Residents</a>
+  <a href="{{ '/attendings/' | relative_url }}" class="mobile-nav-link" style="padding-left:1rem;">Attendings</a>
+  <a href="{{ '/resources/rvu-calculator' | relative_url }}" class="mobile-nav-link">Resources</a>
+  <a href="{{ '/blog/' | relative_url }}" class="mobile-nav-link">Blog</a>
+  <a href="{{ '/support/' | relative_url }}" class="mobile-nav-link">Support</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('hamburger-btn');
+  var menu = document.getElementById('mobile-menu');
+  var overlay = document.getElementById('mobile-overlay');
+  if (!btn || !menu) return;
+  function toggle() {
+    menu.classList.toggle('open');
+    overlay.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  btn.addEventListener('click', toggle);
+  overlay.addEventListener('click', toggle);
+  menu.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() { if (menu.classList.contains('open')) toggle(); });
+  });
+})();
+</script>
