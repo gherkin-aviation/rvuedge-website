@@ -106,19 +106,19 @@
       const target = parseInt(counter.dataset.target, 10);
       const suffix = counter.dataset.suffix || '';
       const prefix = counter.dataset.prefix || '';
+      const obj = { val: 0 };
 
       ScrollTrigger.create({
         trigger: counter,
-        start: 'top 85%',
+        start: 'top 90%',
         once: true,
         onEnter: () => {
-          gsap.to(counter, {
-            innerText: target,
+          gsap.to(obj, {
+            val: target,
             duration: 1.8,
             ease: 'power2.out',
-            snap: { innerText: 1 },
-            onUpdate: function () {
-              counter.textContent = prefix + Math.round(parseFloat(counter.textContent.replace(/[^0-9.-]/g, '') || 0)) + suffix;
+            onUpdate: () => {
+              counter.textContent = prefix + Math.round(obj.val).toLocaleString() + suffix;
             },
             onComplete: () => {
               counter.textContent = prefix + target.toLocaleString() + suffix;
