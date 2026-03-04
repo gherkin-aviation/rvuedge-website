@@ -567,14 +567,8 @@ body {
   background: linear-gradient(90deg, var(--cyan), var(--blue));
   transform-origin: left;
   transform: scaleX(0);
-  z-index: 300;
+  z-index: 150;
   pointer-events: none;
-}
-
-@media (max-width: 767px) {
-  .scroll-progress {
-    height: 4px;
-  }
 }
 
 /* ---------- Hero Animated Orbs ---------- */
@@ -943,10 +937,16 @@ body {
     width: 180px;
   }
 
+  .navbar {
+    background-color: rgba(11, 17, 32, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
   .hero {
     min-height: auto;
-    padding-top: 100px;
-    padding-bottom: 60px;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
 
   .hero-phone {
