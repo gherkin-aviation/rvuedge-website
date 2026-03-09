@@ -420,7 +420,33 @@ body {
   display: block;
 }
 
-/* Watch frame */
+/* Watch frame with band */
+.watch-with-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.watch-band-top,
+.watch-band-bottom {
+  width: 72px;
+  height: 48px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 4px;
+}
+
+.watch-band-top {
+  border-radius: 4px 4px 0 0;
+  margin-bottom: -4px;
+  z-index: 0;
+}
+
+.watch-band-bottom {
+  border-radius: 0 0 12px 12px;
+  margin-top: -4px;
+  z-index: 0;
+}
+
 .watch-frame {
   position: relative;
   width: 120px;
@@ -430,6 +456,20 @@ body {
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Digital crown */
+.watch-frame::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 38%;
+  width: 6px;
+  height: 16px;
+  background: linear-gradient(180deg, #3a3a3a, #222);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .watch-frame img,
@@ -964,6 +1004,12 @@ body {
 
   .watch-frame {
     width: 100px;
+  }
+
+  .watch-band-top,
+  .watch-band-bottom {
+    width: 60px;
+    height: 40px;
   }
 
   /* Reduce/disable animations on mobile */
