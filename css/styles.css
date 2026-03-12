@@ -1725,6 +1725,10 @@ body {
   border-color: var(--cyan);
   box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
 }
+.cpt-category-select option {
+  background: #1E293B;
+  color: #F1F5F9;
+}
 
 /* Code Listing */
 .cpt-listing {
