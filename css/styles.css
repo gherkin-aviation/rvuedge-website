@@ -1717,9 +1717,15 @@ body {
 
 .cpt-chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem;
   padding-bottom: 0.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.cpt-chips::-webkit-scrollbar {
+  display: none;
 }
 
 .chip {
@@ -1966,6 +1972,12 @@ body {
   border-color: var(--cyan);
 }
 
+/* Mobile category dropdown (hidden on desktop) */
+.cpt-category-select { display: none; }
+
+/* Mobile category grid (hidden on desktop) */
+.cpt-mobile-categories { display: none; }
+
 /* Responsive */
 @media (max-width: 640px) {
   .cpt-hero h1 { font-size: 1.5rem; }
@@ -1977,4 +1989,72 @@ body {
   .cpt-entry { flex-direction: column; gap: 0.25rem; padding: 0.75rem 1rem; }
   .cpt-code-col { width: auto; }
   .cpt-meta { gap: 0.5rem; }
+
+  /* Hide chips, show dropdown */
+  .cpt-chips { display: none; }
+  .cpt-category-select {
+    display: block;
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--cyan);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2306B6D4' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+    cursor: pointer;
+  }
+  .cpt-category-select:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.25);
+  }
+
+  /* All page: hide code list, show category grid */
+  .cpt-page-all #cpt-codes-list { display: none; }
+  .cpt-page-all .cpt-mobile-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0.5rem 0 2rem;
+  }
+
+  /* When searching on All page, show results, hide grid */
+  .cpt-page-all.searching #cpt-codes-list { display: block; }
+  .cpt-page-all.searching .cpt-mobile-categories { display: none; }
+
+  /* Category card styling */
+  .cpt-cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .cpt-cat-card:hover {
+    border-color: var(--cyan);
+    background: rgba(6, 182, 212, 0.05);
+  }
+  .cpt-cat-card-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+  .cpt-cat-card-count {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
 }

@@ -55,11 +55,35 @@ description: "Browse all 1,109 Medicine CPT codes for 2026. Search by code, desc
 <a href="/cpt-codes/other/" class="chip">Other <span class="chip-count">(565)</span></a>
 <a href="/cpt-codes/modifiers/" class="chip">Modifiers</a>
     </div>
+    <select class="cpt-category-select" id="cpt-category-select" onchange="if(this.value)window.location=this.value">
+      <option value="/cpt-codes/">All Categories</option>
+      <option value="/cpt-codes/em/">E&amp;M (155)</option>
+      <option value="/cpt-codes/surgery/">Surgery (5,933)</option>
+      <option value="/cpt-codes/radiology/">Radiology (662)</option>
+      <option value="/cpt-codes/medicine/" selected>Medicine (1,109)</option>
+      <option value="/cpt-codes/anesthesia/">Anesthesia (276)</option>
+      <option value="/cpt-codes/pathology-lab/">Pathology &amp; Lab (1,667)</option>
+      <option value="/cpt-codes/category-iii/">Category III (607)</option>
+      <option value="/cpt-codes/g-codes/">G-Codes (1,258)</option>
+      <option value="/cpt-codes/j-codes/">J-Codes (1,075)</option>
+      <option value="/cpt-codes/a-codes/">A-Codes (840)</option>
+      <option value="/cpt-codes/d-codes/">D-Codes (847)</option>
+      <option value="/cpt-codes/q-codes/">Q-Codes (555)</option>
+      <option value="/cpt-codes/s-codes/">S-Codes (505)</option>
+      <option value="/cpt-codes/m-codes/">M-Codes (447)</option>
+      <option value="/cpt-codes/v-codes/">V-Codes (208)</option>
+      <option value="/cpt-codes/p-codes/">P-Codes (58)</option>
+      <option value="/cpt-codes/r-codes/">R-Codes (3)</option>
+      <option value="/cpt-codes/other-hcpcs/">Other HCPCS (208)</option>
+      <option value="/cpt-codes/other/">Other (565)</option>
+      <option value="/cpt-codes/modifiers/">Modifiers</option>
+    </select>
   </div>
 </div>
 
 <!-- Code Listing -->
-<main class="cpt-listing max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<main class="cpt-listing max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" id="cpt-page-wrapper">
+  
   <div id="cpt-codes-list">
     <article class="cpt-entry" id="cpt-90281" data-category="medicine" data-search="90281 human ig im human immunoglobulin injection administered by intramuscular route for passive immunity and disease prevention. human ig im immunoglobulin injection ig im antibody injection in muscle immune protein shot">
 <div class="cpt-code-col"><span class="cpt-code">90281</span></div>

@@ -19,9 +19,16 @@
   var totalCount = entries.length;
   var activeFilter = 'all';
   var debounceTimer = null;
+  var pageWrapper = document.getElementById('cpt-page-wrapper');
+  var isAllPage = pageWrapper && pageWrapper.classList.contains('cpt-page-all');
+  var MOBILE_RESULT_LIMIT = 50;
 
   // Check if chips are filter buttons (main page) or links (category pages)
   var isMainPage = chips.length > 0 && chips[0].tagName === 'BUTTON';
+
+  function isMobile() {
+    return window.innerWidth <= 640;
+  }
 
   function fmt(n) {
     return n.toLocaleString();
@@ -39,6 +46,18 @@
   function filterEntries() {
     var query = searchInput.value.trim().toLowerCase();
     var visible = 0;
+    var mobile = isMobile();
+    var limitResults = mobile && isAllPage && query;
+    var hitLimit = false;
+
+    // Toggle .searching class on All page for mobile grid swap
+    if (isAllPage && pageWrapper) {
+      if (query) {
+        pageWrapper.classList.add('searching');
+      } else {
+        pageWrapper.classList.remove('searching');
+      }
+    }
 
     for (var i = 0; i < entries.length; i++) {
       var entry = entries[i];
@@ -48,9 +67,12 @@
       var matchesFilter = activeFilter === 'all' || cat === activeFilter;
       var matchesSearch = !query || searchText.indexOf(query) !== -1;
 
-      if (matchesFilter && matchesSearch) {
+      if (matchesFilter && matchesSearch && !hitLimit) {
         entry.style.display = '';
         visible++;
+        if (limitResults && visible >= MOBILE_RESULT_LIMIT) {
+          hitLimit = true;
+        }
       } else {
         entry.style.display = 'none';
       }

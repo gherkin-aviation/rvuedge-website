@@ -55,11 +55,54 @@ description: "Free 2026 CPT code lookup. Search 16,978+ CPT codes, HCPCS codes, 
 <a href="/cpt-codes/other/" class="chip">Other <span class="chip-count">(565)</span></a>
 <a href="/cpt-codes/modifiers/" class="chip">Modifiers</a>
     </div>
+    <select class="cpt-category-select" id="cpt-category-select" onchange="if(this.value)window.location=this.value">
+      <option value="/cpt-codes/" selected>All Categories</option>
+      <option value="/cpt-codes/em/">E&amp;M (155)</option>
+      <option value="/cpt-codes/surgery/">Surgery (5,933)</option>
+      <option value="/cpt-codes/radiology/">Radiology (662)</option>
+      <option value="/cpt-codes/medicine/">Medicine (1,109)</option>
+      <option value="/cpt-codes/anesthesia/">Anesthesia (276)</option>
+      <option value="/cpt-codes/pathology-lab/">Pathology &amp; Lab (1,667)</option>
+      <option value="/cpt-codes/category-iii/">Category III (607)</option>
+      <option value="/cpt-codes/g-codes/">G-Codes (1,258)</option>
+      <option value="/cpt-codes/j-codes/">J-Codes (1,075)</option>
+      <option value="/cpt-codes/a-codes/">A-Codes (840)</option>
+      <option value="/cpt-codes/d-codes/">D-Codes (847)</option>
+      <option value="/cpt-codes/q-codes/">Q-Codes (555)</option>
+      <option value="/cpt-codes/s-codes/">S-Codes (505)</option>
+      <option value="/cpt-codes/m-codes/">M-Codes (447)</option>
+      <option value="/cpt-codes/v-codes/">V-Codes (208)</option>
+      <option value="/cpt-codes/p-codes/">P-Codes (58)</option>
+      <option value="/cpt-codes/r-codes/">R-Codes (3)</option>
+      <option value="/cpt-codes/other-hcpcs/">Other HCPCS (208)</option>
+      <option value="/cpt-codes/other/">Other (565)</option>
+      <option value="/cpt-codes/modifiers/">Modifiers</option>
+    </select>
   </div>
 </div>
 
 <!-- Code Listing -->
-<main class="cpt-listing max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<main class="cpt-listing max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 cpt-page-all" id="cpt-page-wrapper">
+  <div class="cpt-mobile-categories"><a href="/cpt-codes/em/" class="cpt-cat-card"><span class="cpt-cat-card-name">E&amp;M</span><span class="cpt-cat-card-count">155 codes</span></a>
+      <a href="/cpt-codes/surgery/" class="cpt-cat-card"><span class="cpt-cat-card-name">Surgery</span><span class="cpt-cat-card-count">5,933 codes</span></a>
+      <a href="/cpt-codes/radiology/" class="cpt-cat-card"><span class="cpt-cat-card-name">Radiology</span><span class="cpt-cat-card-count">662 codes</span></a>
+      <a href="/cpt-codes/medicine/" class="cpt-cat-card"><span class="cpt-cat-card-name">Medicine</span><span class="cpt-cat-card-count">1,109 codes</span></a>
+      <a href="/cpt-codes/anesthesia/" class="cpt-cat-card"><span class="cpt-cat-card-name">Anesthesia</span><span class="cpt-cat-card-count">276 codes</span></a>
+      <a href="/cpt-codes/pathology-lab/" class="cpt-cat-card"><span class="cpt-cat-card-name">Pathology &amp; Lab</span><span class="cpt-cat-card-count">1,667 codes</span></a>
+      <a href="/cpt-codes/category-iii/" class="cpt-cat-card"><span class="cpt-cat-card-name">Category III</span><span class="cpt-cat-card-count">607 codes</span></a>
+      <a href="/cpt-codes/g-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">G-Codes</span><span class="cpt-cat-card-count">1,258 codes</span></a>
+      <a href="/cpt-codes/j-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">J-Codes</span><span class="cpt-cat-card-count">1,075 codes</span></a>
+      <a href="/cpt-codes/a-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">A-Codes</span><span class="cpt-cat-card-count">840 codes</span></a>
+      <a href="/cpt-codes/d-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">D-Codes</span><span class="cpt-cat-card-count">847 codes</span></a>
+      <a href="/cpt-codes/q-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">Q-Codes</span><span class="cpt-cat-card-count">555 codes</span></a>
+      <a href="/cpt-codes/s-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">S-Codes</span><span class="cpt-cat-card-count">505 codes</span></a>
+      <a href="/cpt-codes/m-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">M-Codes</span><span class="cpt-cat-card-count">447 codes</span></a>
+      <a href="/cpt-codes/v-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">V-Codes</span><span class="cpt-cat-card-count">208 codes</span></a>
+      <a href="/cpt-codes/p-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">P-Codes</span><span class="cpt-cat-card-count">58 codes</span></a>
+      <a href="/cpt-codes/r-codes/" class="cpt-cat-card"><span class="cpt-cat-card-name">R-Codes</span><span class="cpt-cat-card-count">3 codes</span></a>
+      <a href="/cpt-codes/other-hcpcs/" class="cpt-cat-card"><span class="cpt-cat-card-name">Other HCPCS</span><span class="cpt-cat-card-count">208 codes</span></a>
+      <a href="/cpt-codes/other/" class="cpt-cat-card"><span class="cpt-cat-card-name">Other</span><span class="cpt-cat-card-count">565 codes</span></a>
+      <a href="/cpt-codes/modifiers/" class="cpt-cat-card"><span class="cpt-cat-card-name">Modifiers</span><span class="cpt-cat-card-count">modifier codes</span></a></div>
   <div id="cpt-codes-list">
     <article class="cpt-entry" id="cpt-0001F" data-category="other" data-search="0001f heart failure composite heart failure assessment with left ventricular ejection fraction (lvef), symptoms assessment, and clinical management composite measure. this quality measure tracks comprehensive heart failure care documentation. hf composite measure heart failure quality measure hf heart failure care checklist heart health quality check">
 <div class="cpt-code-col"><span class="cpt-code">0001F</span></div>
