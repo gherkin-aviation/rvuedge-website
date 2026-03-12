@@ -1650,13 +1650,13 @@ body {
   padding: 1rem 0;
   background: var(--bg-deep);
   border-bottom: 1px solid var(--glass-border);
-  z-index: 50;
+  z-index: 100;
+  position: sticky;
+  top: 64px;
   transition: box-shadow 0.2s;
 }
 
 .cpt-search-bar.stuck {
-  position: sticky;
-  top: 64px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -1710,18 +1710,17 @@ body {
   padding: 0.75rem 0;
   background: var(--bg-deep);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 120px;
+  z-index: 90;
 }
 
 .cpt-chips {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  overflow-x: auto;
   padding-bottom: 0.25rem;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
-
-.cpt-chips::-webkit-scrollbar { display: none; }
 
 .chip {
   padding: 0.375rem 0.875rem;
