@@ -127,10 +127,22 @@
     scrollToAnchor();
   }
 
-  // Sticky search bar
+  // Sticky search bar + position filters below it
   var searchBar = document.getElementById('cpt-search-bar');
+  var filters = document.getElementById('cpt-filters');
   if (searchBar) {
     var searchBarTop = searchBar.offsetTop;
+
+    function updateFiltersTop() {
+      if (filters) {
+        // 64px navbar + search bar height
+        var filtersTop = 64 + searchBar.offsetHeight;
+        filters.style.setProperty('--filters-top', filtersTop + 'px');
+      }
+    }
+    updateFiltersTop();
+    window.addEventListener('resize', updateFiltersTop, { passive: true });
+
     window.addEventListener('scroll', function () {
       if (window.pageYOffset > searchBarTop - 64) {
         searchBar.classList.add('stuck');

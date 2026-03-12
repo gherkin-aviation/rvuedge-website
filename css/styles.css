@@ -1711,7 +1711,7 @@ body {
   background: var(--bg-deep);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: sticky;
-  top: 120px;
+  top: var(--filters-top, 140px);
   z-index: 90;
 }
 
