@@ -1,6 +1,7 @@
 /**
  * CPT Code Lookup — Client-side search & filter
- * Vanilla JS, no dependencies. Filters ~17,000 code entries via data-search attributes.
+ * Vanilla JS, no dependencies. Filters code entries via data-search attributes.
+ * Works on both the main (all codes) page and category sub-pages.
  */
 (function () {
   'use strict';
@@ -19,14 +20,15 @@
   var activeFilter = 'all';
   var debounceTimer = null;
 
-  // Format number with commas
+  // Check if chips are filter buttons (main page) or links (category pages)
+  var isMainPage = chips.length > 0 && chips[0].tagName === 'BUTTON';
+
   function fmt(n) {
     return n.toLocaleString();
   }
 
-  // Update result count display
   function updateCount(visible) {
-    if (visible === totalCount && activeFilter === 'all') {
+    if (visible === totalCount) {
       resultCount.textContent = 'Showing ' + fmt(totalCount) + ' codes';
     } else {
       resultCount.textContent = 'Showing ' + fmt(visible) + ' of ' + fmt(totalCount) + ' codes';
@@ -34,7 +36,6 @@
     noResults.style.display = visible === 0 ? '' : 'none';
   }
 
-  // Main filter function
   function filterEntries() {
     var query = searchInput.value.trim().toLowerCase();
     var visible = 0;
@@ -60,7 +61,7 @@
       var header = sectionHeaders[j];
       var headerCat = header.getAttribute('data-category') || '';
       var showHeader = activeFilter === 'all' || headerCat === activeFilter;
-      var showForSearch = !query; // Hide section headers when searching
+      var showForSearch = !query;
       header.style.display = showHeader && showForSearch ? '' : 'none';
     }
 
@@ -73,17 +74,18 @@
     debounceTimer = setTimeout(filterEntries, 150);
   });
 
-  // Category chip click handlers
-  for (var i = 0; i < chips.length; i++) {
-    chips[i].addEventListener('click', function () {
-      // Remove active from all
-      for (var j = 0; j < chips.length; j++) {
-        chips[j].classList.remove('active');
-      }
-      this.classList.add('active');
-      activeFilter = this.getAttribute('data-filter');
-      filterEntries();
-    });
+  // Category chip click handlers (only on main page where chips are buttons)
+  if (isMainPage) {
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].addEventListener('click', function () {
+        for (var j = 0; j < chips.length; j++) {
+          chips[j].classList.remove('active');
+        }
+        this.classList.add('active');
+        activeFilter = this.getAttribute('data-filter');
+        filterEntries();
+      });
+    }
   }
 
   // Handle direct anchor links (e.g., #cpt-99213)
@@ -92,26 +94,25 @@
     if (hash && hash.startsWith('#cpt-')) {
       var target = document.getElementById(hash.substring(1));
       if (target) {
-        // Clear any filters first
         searchInput.value = '';
         activeFilter = 'all';
-        for (var j = 0; j < chips.length; j++) {
-          chips[j].classList.remove('active');
-          if (chips[j].getAttribute('data-filter') === 'all') {
-            chips[j].classList.add('active');
+        if (isMainPage) {
+          for (var j = 0; j < chips.length; j++) {
+            chips[j].classList.remove('active');
+            if (chips[j].getAttribute('data-filter') === 'all') {
+              chips[j].classList.add('active');
+            }
           }
         }
         filterEntries();
 
-        // Scroll to element with offset for sticky header
         setTimeout(function () {
           var rect = target.getBoundingClientRect();
-          var offset = 140; // Account for sticky search bar
+          var offset = 140;
           window.scrollTo({
             top: rect.top + window.pageYOffset - offset,
             behavior: 'smooth'
           });
-          // Highlight briefly
           target.classList.add('highlighted');
           setTimeout(function () {
             target.classList.remove('highlighted');
@@ -126,7 +127,7 @@
     scrollToAnchor();
   }
 
-  // Sticky search bar behavior
+  // Sticky search bar
   var searchBar = document.getElementById('cpt-search-bar');
   if (searchBar) {
     var searchBarTop = searchBar.offsetTop;
