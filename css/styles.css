@@ -1661,15 +1661,22 @@ body {
 }
 
 .cpt-search-wrap {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
+.cpt-search-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
 .cpt-search-icon {
   position: absolute;
   left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   width: 1.25rem;
   height: 1.25rem;
   color: var(--text-muted);
@@ -1677,7 +1684,7 @@ body {
 }
 
 .cpt-search-input {
-  flex: 1;
+  width: 100%;
   padding: 0.875rem 1rem 0.875rem 3rem;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);

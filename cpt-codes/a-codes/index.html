@@ -22,8 +22,10 @@ description: "Browse all 840 A-Codes CPT codes for 2026. Search by code, descrip
 <div class="cpt-search-bar" id="cpt-search-bar">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="cpt-search-wrap">
-      <svg class="cpt-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-      <input type="text" id="cpt-search" class="cpt-search-input" placeholder="Search by code, description, or common name (e.g. 99213, lap chole, appendectomy)..." autocomplete="off" autofocus>
+      <div class="cpt-search-input-wrap">
+        <svg class="cpt-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="cpt-search" class="cpt-search-input" placeholder="Search by code, description, or common name (e.g. 99213, lap chole, appendectomy)..." autocomplete="off" autofocus>
+      </div>
       <select class="cpt-category-select" id="cpt-category-select">
       <option value="/cpt-codes/">All Categories</option>
       <option value="/cpt-codes/em/">E&amp;M (155)</option>
