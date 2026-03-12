@@ -15,7 +15,6 @@ permalink: /blog/:title/
 
 # Plugins (natively supported by GitHub Pages)
 plugins:
-  - jekyll-sitemap
   - jekyll-seo-tag
 
 # Collections
