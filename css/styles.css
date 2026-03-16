@@ -2139,6 +2139,36 @@ body {
   font-size: 1rem;
 }
 
+/* Medicare Reimbursement Estimate */
+.cpt-detail-medicare {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 0.75rem;
+}
+.cpt-detail-medicare h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+.cpt-medicare-amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.cpt-medicare-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* Specialties */
 .cpt-detail-specialties {
   margin: 2rem 0;
