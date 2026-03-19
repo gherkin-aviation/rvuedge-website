@@ -47,6 +47,8 @@ layout: null
   <meta property="al:ios:app_name" content="RVU Edge">
   <meta property="al:ios:app_store_id" content="6758588125">
   <meta property="al:android:app_name" content="RVU Edge">
+  <meta property="al:android:package" content="com.aeroedge.rvuedge">
+  <meta property="al:android:url" content="https://play.google.com/store/apps/details?id=com.aeroedge.rvuedge">
   <meta name="apple-itunes-app" content="app-id=6758588125">
 
   <!-- Structured Data: SoftwareApplication -->
@@ -55,7 +57,7 @@ layout: null
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "RVU Edge",
-    "operatingSystem": "iOS",
+    "operatingSystem": "iOS, Android",
     "applicationCategory": "HealthApplication",
     "description": "The complete medical career tracker. From medical student to attending — procedures, wRVUs, credentials, MGMA benchmarks, board cases, and CV builder. The fastest wRVU tracker for physicians.",
     "url": "https://rvuedge.com",
@@ -299,10 +301,10 @@ layout: null
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               App Store
             </a>
-            <button onclick="document.getElementById('android-waitlist').scrollIntoView({behavior:'smooth'})" class="store-badge disabled" style="cursor:pointer;border:none;">
-              <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#888" d="M3.609 1.814L13.792 12 3.61 22.186a1.5 1.5 0 01-.609-1.2V3.014c0-.47.224-.913.609-1.2z"/><path fill="#888" d="M16.296 8.497L13.792 12l2.504 3.503 4.012-2.337c.733-.427.733-1.494 0-1.921l-4.012-2.748z"/><path fill="#888" d="M3.609 1.814L16.296 8.497 13.792 12 3.609 1.814z"/><path fill="#888" d="M3.609 22.186L13.792 12l2.504 3.503L3.609 22.186z"/></svg>
-              Android — Join Waitlist
-            </button>
+            <a href="https://play.google.com/store/apps/details?id=com.aeroedge.rvuedge" target="_blank" rel="noopener" class="store-badge">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.5 1.5 0 01-.609-1.2V3.014c0-.47.224-.913.609-1.2z"/><path d="M16.296 8.497L13.792 12l2.504 3.503 4.012-2.337c.733-.427.733-1.494 0-1.921l-4.012-2.748z"/><path d="M3.609 1.814L16.296 8.497 13.792 12 3.609 1.814z"/><path d="M3.609 22.186L13.792 12l2.504 3.503L3.609 22.186z"/></svg>
+              Google Play
+            </a>
           </div>
         </div>
 
@@ -1056,8 +1058,8 @@ layout: null
   </section>
 
 
-  <!-- ==================== ANDROID WAITLIST ==================== -->
-  <section id="android-waitlist" class="py-20 reveal">
+  <!-- ==================== NOW ON ANDROID ==================== -->
+  <section id="android" class="py-20 reveal">
     <div class="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
       <div class="glass-card text-center p-8 sm:p-10">
         <!-- Android icon -->
@@ -1065,20 +1067,13 @@ layout: null
           <svg style="width:28px;height:28px;color:#4ade80;" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 2.226a.75.75 0 010 1.06l-1.97 1.97A7.462 7.462 0 0112 4.5a7.46 7.46 0 00-3.553.756l-1.97-1.97a.75.75 0 00-1.06 1.06l1.97 1.97A7.46 7.46 0 004.5 12v.75h15V12a7.46 7.46 0 00-2.887-5.684l1.97-1.97a.75.75 0 000-1.06zM10 10.5a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0zM4.5 14.25v4.5A2.25 2.25 0 006.75 21h10.5a2.25 2.25 0 002.25-2.25v-4.5h-15z"/></svg>
         </div>
 
-        <h2 class="text-2xl font-bold text-white mb-2">Android Coming Soon</h2>
-        <p class="text-slate-400 text-sm mb-8">Drop your email — we'll notify you the moment RVU Edge hits Google Play.</p>
+        <h2 class="text-2xl font-bold text-white mb-2">Now on Android</h2>
+        <p class="text-slate-400 text-sm mb-8">RVU Edge is live on Google Play. Same powerful features, same lifetime deal.</p>
 
-        <form action="https://formsubmit.co/support@rvuedge.com" method="POST" class="space-y-3 max-w-sm mx-auto">
-          <input type="hidden" name="_subject" value="Android Waitlist Signup">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="email" name="email" required placeholder="you@hospital.edu" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30 transition-all">
-          <button type="submit" class="w-full py-3 rounded-xl font-semibold text-sm text-white transition-all" style="background: linear-gradient(135deg, var(--cyan), var(--blue)); box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);">
-            Notify Me
-          </button>
-        </form>
-
-        <p class="text-slate-600 text-xs mt-4">No spam. One email when it's ready.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.aeroedge.rvuedge" target="_blank" rel="noopener" class="inline-flex items-center gap-2 py-3 px-8 rounded-xl font-semibold text-sm text-white transition-all" style="background: linear-gradient(135deg, var(--cyan), var(--blue)); box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.5 1.5 0 01-.609-1.2V3.014c0-.47.224-.913.609-1.2z"/><path d="M16.296 8.497L13.792 12l2.504 3.503 4.012-2.337c.733-.427.733-1.494 0-1.921l-4.012-2.748z"/><path d="M3.609 1.814L16.296 8.497 13.792 12 3.609 1.814z"/><path d="M3.609 22.186L13.792 12l2.504 3.503L3.609 22.186z"/></svg>
+          Get it on Google Play
+        </a>
       </div>
     </div>
   </section>
@@ -1101,10 +1096,10 @@ layout: null
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               App Store
             </a>
-            <span class="store-badge disabled text-xs">
-              <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#888" d="M3.609 1.814L13.792 12 3.61 22.186a1.5 1.5 0 01-.609-1.2V3.014c0-.47.224-.913.609-1.2z"/></svg>
+            <a href="https://play.google.com/store/apps/details?id=com.aeroedge.rvuedge" target="_blank" rel="noopener" class="store-badge text-xs">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.5 1.5 0 01-.609-1.2V3.014c0-.47.224-.913.609-1.2z"/></svg>
               Google Play
-            </span>
+            </a>
           </div>
         </div>
 
