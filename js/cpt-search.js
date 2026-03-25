@@ -46,6 +46,7 @@
     if (e.n) parts.push(e.n);
     if (e.x) parts.push(e.x);
     if (e.e) parts.push(e.e);
+    if (e.s) parts.push(e.s);
     return parts.join(' ').toLowerCase();
   }
 
