@@ -34,7 +34,6 @@
 
   function buildFuseIndex(codes) {
     if (typeof Fuse === 'undefined') {
-      console.warn('Fuse.js not loaded, using fallback search');
       return;
     }
     try {
@@ -45,9 +44,7 @@
         ignoreLocation: true,
         useExtendedSearch: true,
       });
-      console.log('Fuse.js index built for ' + codes.length + ' codes');
     } catch (err) {
-      console.error('Fuse.js init failed:', err);
       fuseInstance = null;
     }
   }
@@ -143,8 +140,6 @@
 
   function doSearch() {
     var query = searchInput.value.trim();
-    console.log('doSearch called, query="' + query + '", fuseInstance=' + !!fuseInstance + ', allCodes=' + allCodes.length);
-
     if (!query) {
       // No query — show all (with category filter)
       filtered = [];
