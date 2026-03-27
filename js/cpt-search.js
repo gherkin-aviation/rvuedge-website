@@ -57,7 +57,8 @@
   }
 
   function escHtml(s) {
-    if (!s) return '';
+    if (s == null || s === '') return '';
+    if (typeof s !== 'string') s = String(s);
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
