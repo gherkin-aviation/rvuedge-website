@@ -30,6 +30,26 @@
   var activeFilter = 'all'; // Dropdown filter (main page only)
   var dataReady = false;
 
+  var fuseInstance = null;
+
+  function buildFuseIndex(codes) {
+    if (typeof Fuse === 'undefined') return;
+    fuseInstance = new Fuse(codes, {
+      keys: [
+        { name: 'c', weight: 10 },
+        { name: 'n', weight: 8 },
+        { name: 's', weight: 6 },
+        { name: 'd', weight: 5 },
+        { name: 'e', weight: 3 },
+        { name: 'l', weight: 2 },
+      ],
+      threshold: 0.35,
+      distance: 200,
+      minMatchCharLength: 2,
+      ignoreLocation: true,
+    });
+  }
+
   function fmt(n) {
     return n.toLocaleString();
   }
@@ -119,20 +139,34 @@
   }
 
   function doSearch() {
-    var query = searchInput.value.trim().toLowerCase();
+    var query = searchInput.value.trim();
 
-    // Filter
-    filtered = [];
-    for (var i = 0; i < allCodes.length; i++) {
-      var entry = allCodes[i];
-
-      // Category filter (main page dropdown filtering)
-      if (activeFilter !== 'all' && entry.cat !== activeFilter) continue;
-
-      // Search query
-      if (query && entry._s.indexOf(query) === -1) continue;
-
-      filtered.push(entry);
+    if (!query) {
+      // No query — show all (with category filter)
+      filtered = [];
+      for (var i = 0; i < allCodes.length; i++) {
+        var entry = allCodes[i];
+        if (activeFilter !== 'all' && entry.cat !== activeFilter) continue;
+        filtered.push(entry);
+      }
+    } else if (fuseInstance) {
+      // Fuse.js tokenized fuzzy search
+      var results = fuseInstance.search(query, { limit: 200 });
+      filtered = [];
+      for (var i = 0; i < results.length; i++) {
+        var entry = results[i].item;
+        if (activeFilter !== 'all' && entry.cat !== activeFilter) continue;
+        filtered.push(entry);
+      }
+    } else {
+      // Fallback if Fuse not loaded
+      var q = query.toLowerCase();
+      filtered = [];
+      for (var i = 0; i < allCodes.length; i++) {
+        var entry = allCodes[i];
+        if (activeFilter !== 'all' && entry.cat !== activeFilter) continue;
+        if (entry._s && entry._s.indexOf(q) !== -1) filtered.push(entry);
+      }
     }
 
     // Render first batch
@@ -173,6 +207,8 @@
         for (var j = 0; j < allCodes.length; j++) {
           allCodes[j]._s = buildSearchIndex(allCodes[j]);
         }
+
+        buildFuseIndex(allCodes);
 
         dataReady = true;
         if (loadingEl) loadingEl.style.display = 'none';
