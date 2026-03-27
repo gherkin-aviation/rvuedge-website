@@ -33,21 +33,23 @@
   var fuseInstance = null;
 
   function buildFuseIndex(codes) {
-    if (typeof Fuse === 'undefined') return;
-    fuseInstance = new Fuse(codes, {
-      keys: [
-        { name: 'c', weight: 10 },
-        { name: 'n', weight: 8 },
-        { name: 's', weight: 6 },
-        { name: 'd', weight: 5 },
-        { name: 'e', weight: 3 },
-        { name: 'l', weight: 2 },
-      ],
-      threshold: 0.35,
-      distance: 200,
-      minMatchCharLength: 2,
-      ignoreLocation: true,
-    });
+    if (typeof Fuse === 'undefined') {
+      console.warn('Fuse.js not loaded, using fallback search');
+      return;
+    }
+    try {
+      fuseInstance = new Fuse(codes, {
+        keys: ['c', 'n', 's', 'd'],
+        threshold: 0.3,
+        minMatchCharLength: 2,
+        ignoreLocation: true,
+        useExtendedSearch: true,
+      });
+      console.log('Fuse.js index built for ' + codes.length + ' codes');
+    } catch (err) {
+      console.error('Fuse.js init failed:', err);
+      fuseInstance = null;
+    }
   }
 
   function fmt(n) {
@@ -140,6 +142,7 @@
 
   function doSearch() {
     var query = searchInput.value.trim();
+    console.log('doSearch called, query="' + query + '", fuseInstance=' + !!fuseInstance + ', allCodes=' + allCodes.length);
 
     if (!query) {
       // No query — show all (with category filter)
