@@ -653,7 +653,7 @@ def generate_page(entry, cat_stats):
     lines.append('    <!-- CTA -->')
     lines.append('    <div class="cpt-detail-cta">')
     lines.append('      <h2>Track This Code in RVU Edge</h2>')
-    lines.append('      <p>Log procedures, calculate wRVUs, and benchmark against MGMA data — all in one app.</p>')
+    lines.append('      <p>Log procedures, calculate wRVUs, and benchmark against national data — all in one app.</p>')
     lines.append('      <div class="cpt-cta-buttons">')
     lines.append('        <a href="https://apps.apple.com/app/rvu-edge/id6743223718" class="cpt-cta-btn primary">Download for iOS</a>')
     lines.append(f'        <a href="/cpt-codes/{cat}/" class="cpt-cta-btn secondary">Browse {esc(cd)} Codes</a>')

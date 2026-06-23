@@ -147,7 +147,7 @@
 
     const panels = gsap.utils.toArray('.career-panel');
     const phoneImg = document.querySelector('.career-phone-img');
-    const images = ['career-stage.png', 'import-export.png', 'mgma-benchmarks.png'];
+    const images = ['career-stage.png', 'import-export.png', 'credentials.png'];
 
     panels.forEach((panel, i) => {
       ScrollTrigger.create({
