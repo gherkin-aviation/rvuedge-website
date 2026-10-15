@@ -2279,3 +2279,73 @@ body {
   .cpt-related-grid { grid-template-columns: 1fr; }
   .cpt-detail-cta { padding: 1.5rem; }
 }
+
+/* ---------- Cookie consent banner ---------- */
+.consent-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 200;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 16px 20px;
+  background: rgba(15, 23, 42, 0.97);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.consent-banner .consent-text {
+  flex: 1 1 260px;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.consent-banner .consent-text a {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.consent-banner .consent-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Accept and Decline share one style: neither choice is nudged. */
+.consent-banner .consent-btn {
+  min-width: 104px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.consent-banner .consent-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.consent-banner .consent-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .consent-banner .consent-actions { width: 100%; }
+  .consent-banner .consent-btn { flex: 1; }
+}

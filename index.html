@@ -7,14 +7,8 @@ layout: null
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Y3GE1661"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H9Y3GE1661');
-  </script>
+  <!-- Cookie consent: loads Google Analytics only after the visitor accepts -->
+  <script src="js/consent.js" defer></script>
 
   <!-- Primary Meta Tags -->
   <title>RVU Edge - RVU & Case Tracker | wRVU Tracker for your Career</title>
@@ -1114,6 +1108,7 @@ layout: null
           <ul class="space-y-2 text-sm">
             <li><a href="/privacy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/privacy/#website" data-cookie-settings>Cookie settings</a></li>
           </ul>
         </div>
 
@@ -1149,9 +1144,6 @@ layout: null
 
   <!-- Master Animations -->
   <script src="js/animations.js" defer></script>
-
-  <!-- Enhanced Analytics -->
-  <script src="js/analytics.js" defer></script>
 
   <script>
     // ---- Generate Floating Medical Icons (particles with doctor feel) ----
